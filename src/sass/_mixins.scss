@@ -1,0 +1,79 @@
+/// Works with pixel units
+@function fluid-font(
+  $min-width,
+  $max-width,
+  $font-size-at-min-width,
+  $font-size-at-max-width
+) {
+  $slope: ($font-size-at-max-width - $font-size-at-min-width) /
+    ($max-width - $min-width);
+  $y-axis-intersection: -1 * $min-width * $slope + $font-size-at-min-width;
+  $return-value: clamp(
+    #{$font-size-at-min-width},
+    #{$y-axis-intersection} + #{$slope} * 100vw,
+    #{$font-size-at-max-width}
+  );
+  @return $return-value;
+}
+
+/* MEDIA QUERY MIXIN*/
+
+$breakpoints: (
+  sm: 30em,
+  md: 50em,
+  lg: 75em,
+);
+
+@mixin breakpoint($key, $minmax: max) {
+  $size: map-get($breakpoints, $key);
+
+  @if ($size) {
+    @media only screen and (#{$minmax}-width: $size) {
+      @content;
+    }
+  } @else {
+    @error '`#{$key}` does not exist in the $breakpoints';
+  }
+}
+
+@mixin center-self($position) {
+  position: absolute;
+
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  } @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  } @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* PLACEHOLDERS */
+
+%parent-with-centered-children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%cover-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

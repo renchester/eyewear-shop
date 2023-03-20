@@ -1,0 +1,39 @@
+@use 'base';
+@use 'mixins';
+
+.footer {
+  @extend %parent-with-centered-children;
+  flex-direction: column;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 10px;
+  padding: 20px auto;
+  gap: 4px;
+  background-color: var(--color-background);
+  font-family: var(--font-raleway);
+  z-index: 1;
+
+  & > *:visited,
+  & > *:link {
+    text-decoration: none;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--text-xs);
+  }
+
+  &__copyright {
+    font-size: var(--text-xxs);
+  }
+
+  @media screen and (max-height: 900px) {
+    & {
+      position: relative;
+    }
+  }
+}
