@@ -25,7 +25,9 @@ function mapImage(item) {
     id: nanoid(),
     images: {
       main: getImgUrl(fileName, item.type, true),
+      mainid: nanoid(),
       side: getImgUrl(fileName, item.type, false),
+      sideid: nanoid(),
     },
   };
 }
