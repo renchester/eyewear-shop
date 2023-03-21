@@ -4,6 +4,7 @@
 @use 'buttons';
 
 @use 'header';
-@use 'hero';
-@use 'featuredCollection';
+@use 'home_page/hero';
+@use 'home_page/featuredCollection';
+@use 'home_page/blogContent';
 @use 'footer';
