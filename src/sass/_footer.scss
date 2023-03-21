@@ -5,12 +5,11 @@
   @extend %parent-with-centered-children;
   flex-direction: column;
   width: 100%;
-  position: fixed;
   bottom: 0;
-  margin-bottom: 10px;
-  padding: 20px auto;
+  padding-block: 15px;
   gap: 4px;
-  background-color: var(--color-background);
+  background-color: var(--color-grey-dark-2);
+  color: var(--color-text-light);
   font-family: var(--font-raleway);
   z-index: 1;
 
@@ -32,9 +31,9 @@
     font-family: var(--font-courier);
   }
 
-  @media screen and (max-height: 900px) {
-    & {
-      position: relative;
-    }
-  }
+  // @media screen and (max-height: 900px) {
+  //   & {
+  //     position: relative;
+  //   }
+  // }
 }

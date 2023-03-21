@@ -20,6 +20,8 @@ ul {
 }
 
 body {
+  --page-width: clamp(300px, 100%, 1500px);
+
   /* COLOR VARIABLES */
 
   --color-primary: #d74c28;

@@ -36,8 +36,8 @@ $breakpoints: (
   }
 }
 
-@mixin center-self($position) {
-  position: absolute;
+@mixin center-self($position, $relOrAbs: relative) {
+  position: $relOrAbs;
 
   @if $position == 'vertical' {
     top: 50%;
