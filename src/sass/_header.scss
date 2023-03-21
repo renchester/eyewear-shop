@@ -1,0 +1,75 @@
+@import 'mixins';
+.header {
+  @extend %parent-with-centered-children;
+  flex-direction: column;
+
+  &__main {
+    @extend %parent-with-centered-children;
+    position: relative;
+    width: 100%;
+    background-color: var(--color-primary);
+    padding-block: 30px 22px;
+
+    &--extra-message {
+      position: absolute;
+      left: 0;
+      margin-left: 12px;
+      line-height: 1.25rem;
+      width: clamp(50px, 25%, 200px);
+      font-size: var(--text-xs);
+      font-family: var(--font-gotham-book);
+    }
+  }
+
+  &__logo {
+    @extend %parent-with-centered-children;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &-main {
+      font-family: var(--font-gotham-bold);
+      font-size: var(--text-xxl);
+      letter-spacing: 7.5px;
+    }
+
+    &-sub {
+      font-family: var(--font-gotham-light);
+      font-size: var(--text-sm);
+      letter-spacing: 10px;
+    }
+  }
+
+  &__icons-wrapper {
+    position: absolute;
+    right: 0;
+
+    display: flex;
+    gap: 5px;
+  }
+
+  &__icon {
+    font-size: 1.75rem;
+  }
+}
+
+.nav {
+  @extend %parent-with-centered-children;
+  width: 100%;
+  background-color: rgb(34, 34, 34);
+  padding-block: 14px;
+
+  &__links {
+    @extend %parent-with-centered-children;
+    gap: 50px;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: var(--text-xs);
+    font-family: var(--font-courier);
+  }
+}
