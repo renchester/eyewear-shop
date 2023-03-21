@@ -1,4 +1,8 @@
+@use 'imports';
 @use 'base';
 @use 'mixins';
-@use 'components';
+@use 'buttons';
+
+@use 'header';
+@use 'hero';
 @use 'footer';

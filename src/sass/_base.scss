@@ -2,7 +2,6 @@
   vertical-align: baseline;
   font-family: inherit;
   font-style: inherit;
-  font-size: inherit;
   color: inherit;
   border: none;
   padding: 0;
@@ -23,14 +22,14 @@ ul {
 body {
   /* COLOR VARIABLES */
 
-  --color-primary: #9443e0;
-  --color-accent-1: #00457e;
-  --color-accent-2: #00268d;
+  --color-primary: #d74c28;
+  --color-accent-1: #d7285b;
+  --color-accent-2: #2fa3d0;
 
-  --color-background: #f3f3f4;
-  --color-background-opacity75: #f3f3f4be;
-  --color-background-opacity50: #f3f3f486;
-  --color-background-opacity25: #f3f3f448;
+  --color-background: #ffffff;
+  --color-background-opacity75: #ffffffbe;
+  --color-background-opacity50: #ffffff86;
+  --color-background-opacity25: #ffffff48;
   --color-background-opposite: #353535;
 
   --color-light-1: #f3f3f4;
@@ -42,7 +41,12 @@ body {
   --color-text-opacity75: #423c3ab7;
   --color-text-opacity50: #423c3a83;
   --color-text-opacity25: #423c3a48;
+
   --color-text-opposite: #f2f5ff;
+  --color-text-light: #f2f5ff;
+  --color-text-light-opacity75: #f2f5ffb7;
+  --color-text-light-opacity50: #f2f5ff86;
+  --color-text-light-opacity25: #f2f5ff49;
 
   --color-grey-light-1: #e9e9e9; // Light background
   --color-grey-light-2: #f2efee; // Light lines
@@ -65,13 +69,22 @@ body {
     monospace;
   --font-yeseva: 'Yeseva One', Times, 'Times New Roman', serif, monospace;
 
+  --font-gotham: 'Gotham', Times, 'Times New Roman', serif, monospace;
+  --font-gotham-black: 'Gotham Black', Times, 'Times New Roman', serif,
+    monospace;
+  --font-gotham-book: 'Gotham Book', Times, 'Times New Roman', serif, monospace;
+  --font-gotham-bold: 'Gotham Bold', Times, 'Times New Roman', serif, monospace;
+  --font-gotham-light: 'Gotham Light', Times, 'Times New Roman', serif,
+    monospace;
+  --font-courier: 'Courier', Arial, Helvetica, monospace;
+
   /* FONT SIZE VARIABLES */
 
   // body font size
   --text-base-size: 1em;
 
   // type scale
-  --text-scale-ratio: 1.2;
+  --text-scale-ratio: 1.125;
   --text-xxs: calc((var(--text-base-size) / (var(--text-scale-ratio) * 1.35)));
   --text-xs: calc((var(--text-base-size) / var(--text-scale-ratio)));
   --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
@@ -101,8 +114,8 @@ body {
   height: 100dvh;
 
   background-color: var(--color-background);
-  font-family: var(--font-poppins);
-  font-size: var(--font-md);
+  font-family: var(--font-gotham);
+  font-size: var(--text-md);
   color: var(--color-text);
 }
 

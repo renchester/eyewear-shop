@@ -24,11 +24,12 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    font-size: var(--text-xs);
+    font-size: 12px;
   }
 
   &__copyright {
-    font-size: var(--text-xxs);
+    font-size: 10px;
+    font-family: var(--font-courier);
   }
 
   @media screen and (max-height: 900px) {
