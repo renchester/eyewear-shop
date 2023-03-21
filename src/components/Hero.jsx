@@ -8,11 +8,12 @@ const flickityOptions = {
   fade: true,
   wrapAround: true,
   initialIndex: 3,
+  autoPlay: 10000,
 };
 
 function Hero() {
   return (
-    <Flickity options={flickityOptions} className="hero">
+    <Flickity options={flickityOptions} className="hero" elementType="section">
       {heroData.map((item, index) => (
         <div className="hero-item" key={item.id}>
           <img
