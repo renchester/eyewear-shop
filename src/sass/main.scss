@@ -4,7 +4,15 @@
 @use 'buttons';
 
 @use 'header';
+
+// HOME PAGE COMPONENTS
 @use 'home_page/hero';
 @use 'home_page/featuredCollection';
 @use 'home_page/blogContent';
+
+// PRODUCT PAGE COMPONENTS
+@use 'product_page/productBanner';
+@use 'product_page/sidebar';
+@use 'product_page/productLayout';
+
 @use 'footer';
