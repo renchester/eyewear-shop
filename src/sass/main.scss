@@ -4,16 +4,18 @@
 @use 'buttons';
 
 @use 'header';
+@use 'footer';
 
 // HOME PAGE COMPONENTS
 @use 'home_page/hero';
-@use 'home_page/featuredCollection';
-@use 'home_page/blogContent';
+@use 'home_page/featured-collection';
+@use 'home_page/blog-content';
 
-// PRODUCT PAGE COMPONENTS
-@use 'product_page/productBanner';
-@use 'product_page/sidebar';
-@use 'product_page/productGalleryLayout';
-@use 'product_page/productCard';
+// PRODUCT GALLERY COMPONENTS
+@use 'product_gallery/product-banner';
+@use 'product_gallery/sidebar';
+@use 'product_gallery/product-gallery-layout';
+@use 'product_gallery/product-card';
 
-@use 'footer';
+// PRODUCT PAGE COMPONENT
+@use 'product_page/product-page';

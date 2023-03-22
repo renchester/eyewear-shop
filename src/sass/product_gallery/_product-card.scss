@@ -20,6 +20,7 @@
     object-fit: cover;
   }
 
+  &__sold-out,
   &__sale {
     position: absolute;
     top: 0;
@@ -30,7 +31,10 @@
     color: var(--color-text-light);
     font-size: var(--text-xs);
     font-family: var(--font-courier-bold);
-    opacity: 0.85;
+  }
+
+  &__sold-out {
+    z-index: 2;
   }
 
   &__details {
