@@ -1,8 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { nanoid } from 'nanoid';
 
-import framesData from './framesProductData.json';
-import sunniesData from './sunniesProductData.json';
+import framesData from './json/framesProductData.json';
+import sunniesData from './json/sunniesProductData.json';
 
 function getImgUrl(fileName, type, isMain) {
   const ext = 'jpg';
@@ -32,8 +32,12 @@ function mapImage(item) {
   };
 }
 
-export const eyeglassesData = framesData.map((item) => mapImage(item));
+export const eyeglassesData = framesData.map((item) =>
+  Object.freeze(mapImage(item)),
+);
 
-export const sunglassesData = sunniesData.map((item) => mapImage(item));
+export const sunglassesData = sunniesData.map((item) =>
+  Object.freeze(mapImage(item)),
+);
 
 export const allProductsData = [...eyeglassesData, ...sunglassesData];
