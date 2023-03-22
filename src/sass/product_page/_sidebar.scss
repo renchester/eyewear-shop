@@ -1,0 +1,30 @@
+@import '../mixins';
+
+.sb-nav {
+  margin-left: 50px;
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__link {
+    display: block;
+    transition: 200ms;
+    padding: 8px 5px;
+    width: fit-content;
+
+    font-size: 14px;
+    font-family: var(--font-courier-bold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__link.active {
+    background-color: var(--color-primary);
+    font-weight: bold;
+    color: var(--color-text-light);
+  }
+}
