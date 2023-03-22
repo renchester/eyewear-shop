@@ -32,8 +32,8 @@ function mapImage(item) {
   };
 }
 
-export const framesProducts = framesData.map((item) => mapImage(item));
+export const eyeglassesData = framesData.map((item) => mapImage(item));
 
-export const sunniesProducts = sunniesData.map((item) => mapImage(item));
+export const sunglassesData = sunniesData.map((item) => mapImage(item));
 
-export const allProducts = [...framesProducts, ...sunniesProducts];
+export const allProductsData = [...eyeglassesData, ...sunglassesData];
