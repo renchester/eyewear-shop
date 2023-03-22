@@ -28,10 +28,10 @@ body {
   --color-accent-1: #d7285b;
   --color-accent-2: #2fa3d0;
 
-  --color-background: #ffffff;
-  --color-background-opacity75: #ffffffbe;
-  --color-background-opacity50: #ffffff86;
-  --color-background-opacity25: #ffffff48;
+  --color-background: #fffaf0;
+  --color-background-opacity75: #fffaf0be;
+  --color-background-opacity50: #fffaf086;
+  --color-background-opacity25: #fffaf048;
   --color-background-opposite: #353535;
 
   --color-light-1: #f3f3f4;
@@ -78,7 +78,10 @@ body {
   --font-gotham-bold: 'Gotham Bold', Times, 'Times New Roman', serif, monospace;
   --font-gotham-light: 'Gotham Light', Times, 'Times New Roman', serif,
     monospace;
+
   --font-courier: 'Courier', Arial, Helvetica, monospace;
+  --font-courier-bold: 'Courier Bold', Arial, Helvetica, monospace;
+  --font-courier-italic: 'Courier Italic', Arial, Helvetica, monospace;
 
   /* FONT SIZE VARIABLES */
 

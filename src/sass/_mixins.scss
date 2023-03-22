@@ -36,6 +36,16 @@ $breakpoints: (
   }
 }
 
+@mixin breakpoint-exact($size, $minmax: max) {
+  @if ($size) {
+    @media only screen and (#{$minmax}-width: $size) {
+      @content;
+    }
+  } @else {
+    @error '`#{$key}` does not exist in the $breakpoints';
+  }
+}
+
 @mixin center-self($position, $relOrAbs: relative) {
   position: $relOrAbs;
 

@@ -62,15 +62,15 @@
   }
 
   &-item__title {
-    font-family: var(--font-roboto);
-    font-size: var(--text-xxxl);
-    letter-spacing: 2px;
+    font-family: var(--font-gotham);
+    font-size: var(--text-xxl);
+    letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 15px;
   }
 
   &-item__details {
-    font-family: var(--font-raleway);
+    font-family: var(--font-gotham-book);
     font-size: var(--text-xs);
     font-weight: lighter;
     letter-spacing: 0.9px;
