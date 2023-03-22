@@ -1,4 +1,6 @@
 import { useState } from 'react';
+
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
@@ -56,7 +58,7 @@ ProductCard.propTypes = {
     color: PropTypes.string,
     quantity: PropTypes.number.isRequired,
     onSale: PropTypes.bool.isRequired,
-    id: PropTypes.number,
+    id: PropTypes.string.isRequired,
     images: PropTypes.shape({
       main: PropTypes.node,
       side: PropTypes.node,
