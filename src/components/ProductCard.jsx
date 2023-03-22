@@ -27,6 +27,9 @@ function ProductCard(props) {
       onMouseLeave={handleMouseLeave}
     >
       <div className="pd-card__img--wrapper">
+        {content.quantity < 1 && (
+          <div className="pd-card__sold-out">SOLD OUT</div>
+        )}
         {content.onSale && <div className="pd-card__sale">SALE</div>}
         <img
           src={isHover ? content.images.side : content.images.main}

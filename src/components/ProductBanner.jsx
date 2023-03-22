@@ -15,6 +15,7 @@ function ProductBanner(props) {
           src={content.img}
           alt={content.description}
           className="banner-img"
+          loading="lazy"
         />
       </div>
     </section>

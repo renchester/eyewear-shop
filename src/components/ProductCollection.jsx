@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import { nanoid } from 'nanoid';
 
 import bannerImg from '../assets/img/unsplash/frame-9.jpg';
 
@@ -22,7 +23,7 @@ function ProductCollection() {
   return (
     <>
       {allProductsData.map((item) => (
-        <ProductCard content={item} key={item.id} />
+        <ProductCard content={item} key={nanoid()} />
       ))}
     </>
   );

@@ -1,6 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { nanoid } from 'nanoid';
-
 import framesData from './json/framesProductData.json';
 import sunniesData from './json/sunniesProductData.json';
 
@@ -22,12 +19,9 @@ function mapImage(item) {
 
   return {
     ...item,
-    id: nanoid(),
     images: {
       main: getImgUrl(fileName, item.type, true),
-      mainid: nanoid(),
       side: getImgUrl(fileName, item.type, false),
-      sideid: nanoid(),
     },
   };
 }

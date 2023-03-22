@@ -1,5 +1,7 @@
 [
   {
+    "id": "6EliiidBbpIS",
+    "brand": "Dior",
     "title": "DIOR ReflectedDP S6D",
     "price": "₱25,280.00",
     "originalPrice": "",
@@ -16,6 +18,8 @@
     "onSale": false
   },
   {
+    "id": "BqUZdqXH6BsF",
+    "brand": "Mr Leight",
     "title": "Mr Leight Runyon",
     "price": "₱36,600.00",
     "originalPrice": "₱21,850.00",
@@ -31,6 +35,8 @@
     "onSale": true
   },
   {
+    "id": "2Zt911FD2Zcw",
+    "brand": "RetroSuperFuture",
     "title": "RetroSuperFuture Meta",
     "price": "₱6,555.00",
     "originalPrice": "₱21,850.00",
@@ -47,6 +53,8 @@
     "onSale": true
   },
   {
+    "id": "VktzCbKeq9le",
+    "brand": "Parasite",
     "title": "Parasite Aerial",
     "price": "₱8,175.00",
     "originalPrice": "₱16,350.00",
@@ -63,6 +71,8 @@
     "onSale": true
   },
   {
+    "id": "qW7eUZInKNDE",
+    "brand": "Dior",
     "title": "DR10917229",
     "price": "₱17,728.00",
     "originalPrice": "₱22,160.00",
@@ -78,6 +88,8 @@
     "onSale": true
   },
   {
+    "id": "maRuwivySOLD",
+    "brand": "Dior",
     "title": "DR10910829",
     "price": "₱18,200.00",
     "originalPrice": "₱22,750.00",
@@ -93,6 +105,8 @@
     "onSale": true
   },
   {
+    "id": "a8Vt3bF0uMZj",
+    "brand": "Dior",
     "title": "DR10915731",
     "price": "₱18,752.00",
     "originalPrice": "₱23,440.00",
@@ -108,6 +122,8 @@
     "onSale": true
   },
   {
+    "id": "a8Vt3bF0uMZj",
+    "brand": "Dior",
     "title": "DR10918311",
     "price": "₱23,184.00",
     "originalPrice": "₱28,980.00",
@@ -123,6 +139,8 @@
     "onSale": true
   },
   {
+    "id": "3kZWTmMpX76W",
+    "brand": "Dior",
     "title": "DR10917522",
     "price": "₱13,296.00",
     "originalPrice": "₱16,620.00",
@@ -138,6 +156,8 @@
     "onSale": true
   },
   {
+    "id": "k76gSrY8oWSz",
+    "brand": "Italia Independent",
     "title": "Italia Independent 0090",
     "price": "₱2,275.00",
     "originalPrice": "₱22,750.00",
@@ -154,6 +174,8 @@
     "onSale": true
   },
   {
+    "id": "ou1XI4ntLd2U",
+    "brand": "Yohji Yamamoto",
     "title": "Yohji Yamamoto 5020",
     "price": "₱25,500.00",
     "originalPrice": "₱13,000.00",
@@ -170,6 +192,8 @@
     "onSale": true
   },
   {
+    "id": "96iaY17LR2Yf",
+    "brand": "Sunday Somewhere",
     "title": "Sunday Somewhere Saskia",
     "price": "₱13,580.00",
     "originalPrice": "₱19,400.00",
@@ -181,6 +205,8 @@
     "onSale": true
   },
   {
+    "id": "FMu6VRg2mdUh",
+    "brand": "Mr Leight",
     "title": "Mr. Leight Beverly S",
     "price": "₱38,000.00",
     "originalPrice": "",
@@ -192,6 +218,8 @@
     "onSale": false
   },
   {
+    "id": "zIy6ZZlXRQ41",
+    "brand": "Native Sons",
     "title": "Native Sons PS Bullit",
     "price": "₱18,030.00",
     "originalPrice": "₱21,850.00",
@@ -206,6 +234,8 @@
     "onSale": true
   },
   {
+    "id": "m87KTPkL5Cwy",
+    "brand": "Native Sons",
     "title": "Native Sons PS Seeger",
     "price": "₱20,090.00",
     "originalPrice": "₱21,850.00",
@@ -220,6 +250,8 @@
     "onSale": true
   },
   {
+    "id": "k2DpYENjGKMt",
+    "brand": "Native Sons",
     "title": "Native Sons PS Hitchcock",
     "price": "₱24,730.00",
     "originalPrice": "₱21,850.00",
@@ -234,6 +266,8 @@
     "onSale": true
   },
   {
+    "id": "v52RqP46M1jm",
+    "brand": "Native Sons",
     "title": "Native Sons PS Ryder",
     "price": "₱25,390.00",
     "originalPrice": "₱21,850.00",
@@ -245,6 +279,8 @@
     "onSale": true
   },
   {
+    "id": "E1Z5dbPkEHq3",
+    "brand": "Native Sons",
     "title": "Native Sons PS Newman 46",
     "price": "₱24,730.00",
     "originalPrice": "",
@@ -259,6 +295,8 @@
     "onSale": false
   },
   {
+    "id": "IavGbkeJoYlE",
+    "brand": "Native Sons",
     "title": "Native Sons PS Newman 48",
     "price": "₱24,730.00",
     "originalPrice": "",
@@ -273,6 +311,8 @@
     "onSale": false
   },
   {
+    "id": "CshtlHCAULhX",
+    "brand": "Native Sons",
     "title": "Native Sons PS John Q",
     "price": "₱24,500.00",
     "originalPrice": "₱21,850.00",
@@ -287,6 +327,8 @@
     "onSale": true
   },
   {
+    "id": "0IQN0pAIljEb",
+    "brand": "Native Sons",
     "title": "Native Sons x Sacai Krasner",
     "price": "₱19,580.00",
     "originalPrice": "₱30,500.00",
@@ -298,6 +340,8 @@
     "onSale": true
   },
   {
+    "id": "23YSc6jxsBDP",
+    "brand": "Native Sons",
     "title": "Native Sons PS Laughlin",
     "price": "₱14,500.00",
     "originalPrice": "₱14,500.00",
@@ -314,6 +358,8 @@
     "onSale": true
   },
   {
+    "id": "1yL533xkGJlj",
+    "brand": "Native Sons",
     "title": "Native Sons PS Hughes",
     "price": "₱19,440.00",
     "originalPrice": "₱30,500.00",
@@ -330,6 +376,8 @@
     "onSale": true
   },
   {
+    "id": "j4EZCGKyYlt2",
+    "brand": "Yohji Yamamoto",
     "title": "Yohji Yamamoto 7038",
     "price": "₱24,000.00",
     "originalPrice": "₱31,500.00",
@@ -346,6 +394,8 @@
     "onSale": true
   },
   {
+    "id": "RaNcOO8tSTJU",
+    "brand": "Yohji Yamamoto",
     "title": "Yohji Yamamoto 7037",
     "price": "₱25,200.00",
     "originalPrice": "₱31,500.00",
@@ -362,6 +412,8 @@
     "onSale": true
   },
   {
+    "id": "59cnZj9PeWtl",
+    "brand": "Yohji Yamamoto",
     "title": "Yohji Yamamoto 7031",
     "price": "₱20,400.00",
     "originalPrice": "₱25,500.00",
@@ -378,6 +430,8 @@
     "onSale": true
   },
   {
+    "id": "ZyOUjuBpekuG",
+    "brand": "Yohji Yamamoto",
     "title": "Yohji Yamamoto 7030",
     "price": "₱20,400.00",
     "originalPrice": "₱25,500.00",
@@ -394,6 +448,8 @@
     "onSale": true
   },
   {
+    "id": "blL9UvTA7qdd",
+    "brand": "Yohji Yamamoto",
     "title": "Yohji Yamamoto 7029",
     "price": "₱29,500.00",
     "originalPrice": "₱25,500.00",
@@ -410,6 +466,8 @@
     "onSale": true
   },
   {
+    "id": "rQSMfiJ1hvnu",
+    "brand": "Yohji Yamamoto",
     "title": "Yohji Yamamoto 7026",
     "price": "₱24,000.00",
     "originalPrice": "₱25,500.00",
@@ -426,6 +484,8 @@
     "onSale": true
   },
   {
+    "id": "cNhB28WsdzS7",
+    "brand": "Masunaga",
     "title": "Masunaga GMS-113",
     "price": "₱33,750.00",
     "originalPrice": "₱21,850.00",
@@ -442,6 +502,8 @@
     "onSale": true
   },
   {
+    "id": "sGJ4ZpRuYefh",
+    "brand": "Masunaga",
     "title": "Masunaga Kenzo Canopus 23",
     "price": "₱37,875.00",
     "originalPrice": "",
@@ -458,6 +520,8 @@
     "onSale": false
   },
   {
+    "id": "mXifbbYMpafC",
+    "brand": "RetroSuperFuture",
     "title": "RetroSuperFuture PS Man Sol Leone",
     "price": "₱5,000.00",
     "originalPrice": "₱10,000.00",
@@ -474,6 +538,8 @@
     "onSale": true
   },
   {
+    "id": "slYphf6s7OoT",
+    "brand": "RetroSuperFuture",
     "title": "RetroSuperFuture PS Smile",
     "price": "₱4,830.00",
     "originalPrice": "₱16,100.00",
@@ -490,6 +556,8 @@
     "onSale": true
   },
   {
+    "id": "1pdWkXabTFjI",
+    "brand": "RetroSuperFuture",
     "title": "RetroSuperFuture PS Meta",
     "price": "₱9,500.00",
     "originalPrice": "₱19,000.00",
@@ -501,6 +569,8 @@
     "onSale": true
   },
   {
+    "id": "0XN7uTKyRyWb",
+    "brand": "Matsuda",
     "title": "Matsuda PS M3096 BG",
     "price": "₱37,500.00",
     "originalPrice": "",
@@ -517,6 +587,8 @@
     "onSale": false
   },
   {
+    "id": "7CUiBAr0X13h",
+    "brand": "BAPE",
     "title": "BAPE Shark 19",
     "price": "₱26,000.00",
     "originalPrice": "",
@@ -533,6 +605,8 @@
     "onSale": false
   },
   {
+    "id": "HzsTSFUVKgG3",
+    "brand": "Native Sons",
     "title": "Native Sons PS Thompson",
     "price": "₱23,180.00",
     "originalPrice": "₱21,850.00",
@@ -547,6 +621,8 @@
     "onSale": true
   },
   {
+    "id": "qo88wxdl40bK",
+    "brand": "Sunday Somewhere",
     "title": "Sunday Somewhere Ava",
     "price": "₱10,150.00",
     "originalPrice": "₱14,500.00",
@@ -558,6 +634,8 @@
     "onSale": true
   },
   {
+    "id": "NgyjyKPuZZkv",
+    "brand": "Yuenn",
     "title": "Yuenn YE-012 S",
     "price": "₱10,339.00",
     "originalPrice": "₱14,770.00",
@@ -574,6 +652,8 @@
     "onSale": true
   },
   {
+    "id": "G236RqN6LnQi",
+    "brand": "Native Sons",
     "title": "Native Sons PS Kerouac",
     "price": "₱13,200.00",
     "originalPrice": "₱16,500.00",
@@ -585,6 +665,8 @@
     "onSale": true
   },
   {
+    "id": "Iumkx97JBhAi",
+    "brand": "Yuenn",
     "title": "Yuenn YE-0010 S",
     "price": "₱11,060.00",
     "originalPrice": "₱15,800.00",
@@ -601,6 +683,8 @@
     "onSale": true
   },
   {
+    "id": "6yBSyWkEipQB",
+    "brand": "Yuenn",
     "title": "Yuenn YE-009 S",
     "price": "₱10,339.00",
     "originalPrice": "₱14,770.00",
@@ -617,6 +701,8 @@
     "onSale": true
   },
   {
+    "id": "vRytSwuJOuCo",
+    "brand": "Yuenn",
     "title": "Yuenn YE-008 S",
     "price": "₱10,584.00",
     "originalPrice": "₱15,120.00",
@@ -633,6 +719,8 @@
     "onSale": true
   },
   {
+    "id": "7Ufv62OKvHzu",
+    "brand": "Yuenn",
     "title": "Yuenn YE-006 S",
     "price": "₱12,628.00",
     "originalPrice": "₱18,040.00",
@@ -649,6 +737,8 @@
     "onSale": true
   },
   {
+    "id": "XgzvuSXJT7fH",
+    "brand": "Yuenn",
     "title": "Yuenn YE-005 S",
     "price": "₱13,552.00",
     "originalPrice": "₱19,360.00",
@@ -665,6 +755,8 @@
     "onSale": true
   },
   {
+    "id": "StAq5MrmsjxC",
+    "brand": "Mr Leight",
     "title": "Mr Leight Lexington S",
     "price": "₱38,000.00",
     "originalPrice": "₱21,895.00",

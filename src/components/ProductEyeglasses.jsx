@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import { nanoid } from 'nanoid';
 
 import ProductCard from './ProductCard';
 
@@ -22,7 +23,7 @@ function ProductEyeglasses() {
   return (
     <>
       {eyeglassesData.map((item) => (
-        <ProductCard content={item} key={item.id} />
+        <ProductCard content={item} key={nanoid()} />
       ))}
     </>
   );

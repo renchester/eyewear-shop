@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Flickity from 'react-flickity-component';
 import flickityFade from 'flickity-fade';
+import { nanoid } from 'nanoid';
 
 import heroData from '../data/heroData';
 
@@ -15,7 +16,7 @@ function Hero() {
   return (
     <Flickity options={flickityOptions} className="hero" elementType="section">
       {heroData.map((item, index) => (
-        <div className="hero-item" key={item.id}>
+        <div className="hero-item" key={nanoid()}>
           <img
             src={item.img}
             alt={item.details}

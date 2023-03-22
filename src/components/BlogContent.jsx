@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { nanoid } from 'nanoid';
 import blogData from '../data/blogData';
 
 function BlogContent() {
@@ -7,7 +8,7 @@ function BlogContent() {
       <h3 className="blog__section-title">Latest Posts</h3>
       <div className="blog-posts latest">
         {blogData.map((item) => (
-          <article className="blog-item" key={item.id}>
+          <article className="blog-item" key={nanoid()}>
             <img
               src={item.img}
               alt={item.description}
