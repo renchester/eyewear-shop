@@ -1,0 +1,71 @@
+@import '../mixins';
+
+.pd-card {
+  display: block;
+  padding: 5px;
+  margin-inline: 10px;
+  margin-block: 30px;
+  text-decoration: none;
+
+  &__img--wrapper {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border: 7px solid var(--color-grey-light-3);
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__sale {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    font-size: var(--text-xs);
+    font-family: var(--font-courier-bold);
+    opacity: 0.85;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    width: fit-content;
+
+    @include center-self(horizontal);
+  }
+
+  &__title {
+    font-size: var(--text-xs);
+    font-family: var(--font-gotham-bold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__price--wrapper {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+
+    font-family: var(--font-gotham);
+    font-size: 14px;
+  }
+
+  &__price {
+    text-align: left;
+  }
+
+  &__og-price {
+    text-decoration: line-through;
+    color: var(--color-text-opacity50);
+  }
+}
