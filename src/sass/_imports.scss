@@ -25,5 +25,18 @@
 
 @font-face {
   font-family: 'Courier';
-  src: url('../assets/fonts/courier.ttf') format('truetype');
+  src: url('../assets/fonts/courier/Courier\ Prime\ Sans.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Courier Bold';
+  src: url('../assets/fonts/courier/Courier\ Prime\ Sans\ Bold.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Courier Italic';
+  src: url('../assets/fonts/courier/Courier\ Prime\ Sans\ Italic.ttf')
+    format('truetype');
 }
