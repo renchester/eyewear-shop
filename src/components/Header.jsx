@@ -32,14 +32,14 @@ function Header() {
             Collection
           </NavLink>
           <NavLink
-            to="/products/frames"
+            to="/products/eyeglasses"
             className="nav__link
           "
           >
             Eyeglasses
           </NavLink>
           <NavLink
-            to="/products/sunnies"
+            to="/products/sunglasses"
             className="nav__link
           "
           >
