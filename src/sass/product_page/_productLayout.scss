@@ -1,1 +1,52 @@
 @import '../mixins';
+
+.products {
+  margin-inline: 60px;
+
+  &--wrapper {
+    @include center-self(horizontal);
+    width: var(--page-width);
+    margin-block: 80px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  &-sorter {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+
+    &__label {
+      display: block;
+      border: 1px solid black;
+      padding: 5px 8px;
+
+      font-size: 14px;
+      font-family: var(--font-courier-bold);
+
+      &:focus-within {
+        border-color: var(--color-primary);
+      }
+    }
+
+    &__selection {
+      padding-block: 5px;
+      font-family: var(--font-courier);
+      font-size: inherit;
+
+      &:focus {
+        outline: 1px solid var(--color-primary);
+      }
+
+      & > option {
+        font-family: var(--font-roboto);
+      }
+    }
+  }
+
+  &-display {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    margin-top: 30px;
+  }
+}
