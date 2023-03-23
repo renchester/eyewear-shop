@@ -1,6 +1,11 @@
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+import CartContext from '../context/CartContext';
+
 function Header() {
+  const [cartItems] = useContext(CartContext);
+
   return (
     <header className="header">
       <div className="header__main">
@@ -13,12 +18,21 @@ function Header() {
           <h2 className="header__logo-sub">EYEWEAR</h2>
         </Link>
         <div className="header__icons-wrapper">
-          <div className="header__icon icon__search material-symbols-outlined">
+          <button
+            type="button"
+            className="header__btn-icon icon__search material-symbols-outlined"
+          >
             search
-          </div>
-          <div className="header__icon icon__shopping-bag material-symbols-outlined">
+          </button>
+          <Link
+            to="/cart"
+            className="header__btn-icon icon__shopping-bag material-symbols-outlined"
+          >
             shopping_bag
-          </div>
+            {cartItems.length > 0 && (
+              <div className="cart-badge">{cartItems.length}</div>
+            )}
+          </Link>
         </div>
       </div>
 
