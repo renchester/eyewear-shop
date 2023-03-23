@@ -69,7 +69,9 @@ function ProductPage() {
           )}
           <div className="pd-pg__img-thumbs">
             <button
-              className="pd-pg__img-thumbnail--wrapper"
+              className={`pd-pg__img-thumbnail--wrapper ${
+                activeImg === 1 ? 'active' : ''
+              }`}
               type="button"
               onClick={() => setActiveImg(1)}
             >
@@ -80,7 +82,9 @@ function ProductPage() {
               />
             </button>
             <button
-              className="pd-pg__img-thumbnail--wrapper"
+              className={`pd-pg__img-thumbnail--wrapper ${
+                activeImg === 2 ? 'active' : ''
+              }`}
               type="button"
               onClick={() => setActiveImg(2)}
             >
@@ -113,11 +117,19 @@ function ProductPage() {
         </div>
         <div className="pd-pg__opt-details">
           {product.color && (
-            <span className="pd-pg__color">Color: {product.color}</span>
+            <div className="pd-pg__color--wrapper">
+              <span className=" pd-pg__opt-label pd-pg__color-label">
+                Color:{' '}
+              </span>
+              <span className="pd-pg__color">{product.color}</span>
+            </div>
           )}
           {product.quantity > 0 ? (
             <>
-              <label htmlFor="pd-quantity" className="pd-pg__quantity-label">
+              <label
+                htmlFor="pd-quantity"
+                className=" pd-pg__opt-label pd-pg__quantity-label"
+              >
                 Quantity:
                 <input
                   type="number"
