@@ -31,6 +31,7 @@ function ProductPage() {
   const [activeImg, setActiveImg] = useState(1);
   const [desiredQty, setDesiredQty] = useState(1);
   const [errorMessage, setErrorMessage] = useState('');
+  const [itemIsInCart, setInCart] = useState(false);
 
   const ERROR_MESSAGE =
     'We do not have enough stocks for your current order. Contact us directly to get more information';
@@ -38,6 +39,12 @@ function ProductPage() {
   useEffect(() => {
     setProduct(() => allProductsData.find((p) => p.id === productId));
   }, [productId]);
+
+  useEffect(() => {
+    const isInCart = cartItems.find((ci) => ci.itemId === productId);
+
+    if (isInCart) setInCart(true);
+  }, [cartItems, productId]);
 
   useEffect(() => {
     setTimeout(() => setErrorMessage(''), 10000);
@@ -72,20 +79,22 @@ function ProductPage() {
   const addToCart = (e) => {
     e.preventDefault();
 
-    const isInCart = cartItems.find((ci) => ci.itemId === productId);
-    const newQuantity = +isInCart.quantity + +desiredQty;
+    const checkedItem = cartItems.find((ci) => ci.itemId === productId);
+    let newQuantity = 0;
+
+    if (itemIsInCart) newQuantity = +checkedItem.quantity + +desiredQty;
 
     // Validation for new quantity
     if (
       desiredQty > product.quantity ||
-      (isInCart && newQuantity > product.quantity)
+      (itemIsInCart && newQuantity > product.quantity)
     ) {
       setErrorMessage(ERROR_MESSAGE);
       return;
     }
 
     // Update quantity if new quantity is valid
-    if (isInCart && newQuantity <= product.quantity) {
+    if (itemIsInCart && newQuantity <= product.quantity) {
       updateQuantity();
       return;
     }
@@ -204,9 +213,20 @@ function ProductPage() {
                   value={desiredQty}
                 />
               </label>
-              <button className="pd-pg__btn-add-cart" type="submit">
+              <button
+                className="pd-pg__btn-cart pd-pg__btn-add-cart"
+                type="submit"
+              >
                 Add to Cart
               </button>
+              {itemIsInCart && (
+                <Link
+                  to="/cart"
+                  className="pd-pg__btn-cart pd-pg__btn-checkout"
+                >
+                  Buy it now
+                </Link>
+              )}
 
               {errorMessage && (
                 <span className="pd-pg__error">{errorMessage}</span>
