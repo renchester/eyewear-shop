@@ -1,25 +1,104 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
 import { nanoid } from 'nanoid';
 
 import CartContext from '../context/CartContext';
 
 import { allProductsData } from '../data/productData';
+import CartRow from '../components/CartRow';
+import getTotalPrice from '../utils/getTotalPrice';
+import formatPrice from '../utils/formatPrice';
 
 function CartPage() {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart] = useContext(CartContext);
 
-  console.log(cart);
+  const checkOutProducts = (e) => {
+    e.preventDefault();
+
+    alert('Checkout successful');
+  };
 
   return (
-    <>
-      {cart.map((item) => {
-        const productInCart = allProductsData.find(
-          (product) => product.id === item.itemId,
-        );
-
-        return <div key={nanoid()}>{productInCart.title}</div>;
-      })}
-    </>
+    <main className="cart-page">
+      {cart.length >= 1 ? (
+        <>
+          <h1 className="cart__title">YOUR CART</h1>
+          <form action="" className="cart__form" onSubmit={checkOutProducts}>
+            <table className="cart__table">
+              <thead>
+                <tr className="cart-item__row cart-item__header-row">
+                  <th
+                    scope="col"
+                    className="cart-item__header-cell
+                "
+                  >
+                    Item
+                  </th>
+                  <th
+                    scope="col"
+                    className="cart-item__header-cell
+                "
+                  >
+                    Price
+                  </th>
+                  <th
+                    scope="col"
+                    className="cart-item__header-cell
+                "
+                  >
+                    Quantity
+                  </th>
+                  <th
+                    scope="col"
+                    className="cart-item__header-cell
+                "
+                  >
+                    Total
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {cart.map((item) => {
+                  const productInCart = allProductsData.find(
+                    (product) => product.id === item.itemId,
+                  );
+                  return <CartRow product={productInCart} key={nanoid()} />;
+                })}
+              </tbody>
+            </table>
+            <div className="cart__checkout">
+              <div className="cart__total-price">
+                <div className="cart__total-price--wrapper">
+                  <span className="cart__total-price--label">Subtotal</span>
+                  <span className="cart__total-price--actual">
+                    {formatPrice(getTotalPrice(cart))}
+                  </span>
+                </div>
+                <div className="cart__total-price--disclaimer">
+                  Shipping and taxes computed at checkout
+                </div>
+              </div>
+              <button type="submit" className="cart__btn-submit">
+                CHECKOUT
+              </button>
+              <Link to="/products" className="cart__shop-link">
+                Keep Shopping
+              </Link>
+            </div>
+          </form>
+        </>
+      ) : (
+        <div className="cart-empty--wrapper">
+          <span className="cart-empty__message">
+            Your cart is looking empty
+          </span>
+          <Link to="/products" className="cart-empty__link">
+            Shop Now
+          </Link>
+        </div>
+      )}
+    </main>
   );
 }
 export default CartPage;

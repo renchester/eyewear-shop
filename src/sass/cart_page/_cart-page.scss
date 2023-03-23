@@ -1,0 +1,229 @@
+@import '../mixins';
+
+.cart {
+  &-page {
+    @include center-self(horizontal);
+
+    @extend %parent-with-centered-children;
+    flex-direction: column;
+    margin-block: 50px;
+    width: var(--page-width);
+  }
+
+  &__title {
+    margin-block: 25px;
+    font-family: var(--font-gotham-bold);
+    font-size: var(--text-lg);
+    letter-spacing: 2px;
+  }
+
+  &__form {
+    position: relative;
+    width: 100%;
+
+    %cart-width {
+      @include center-self(horizontal);
+      width: min(90%, 1200px);
+    }
+  }
+
+  &__table {
+    @extend %cart-width;
+    margin-top: 25px;
+  }
+
+  &__checkout {
+    @extend %cart-width;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__total-price {
+    position: relative;
+    margin-top: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-grey-light-3);
+    text-align: right;
+
+    &--wrapper {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    &--label {
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: var(--text-xxs);
+      font-family: var(--font-gotham-black);
+    }
+
+    &--actual {
+      font-family: var(--font-gotham-bold);
+      font-size: var(--text-xxl);
+    }
+
+    &--disclaimer {
+      margin-top: 10px;
+      letter-spacing: 1px;
+      font-family: var(--font-roboto-mono);
+      font-size: var(--text-xxs);
+      font-style: italic;
+    }
+  }
+
+  &__btn-submit {
+    background: var(--color-primary);
+    margin-top: 40px;
+    padding: 15px 40px;
+    color: var(--color-text-light);
+    font-size: var(--text-xs);
+    font-family: var(--font-gotham-bold);
+    letter-spacing: 2px;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.02);
+      transform-origin: right;
+    }
+  }
+
+  &__shop-link {
+    margin-top: 20px;
+    color: rgba(88, 88, 88);
+    font-size: var(--text-xs);
+    font-family: var(--font-courier-bold);
+    text-underline-offset: 3px;
+    text-transform: uppercase;
+  }
+}
+
+.cart-item {
+  &__header-row {
+    border-bottom: 1px solid var(--color-grey-light-3);
+    padding-bottom: 20px;
+  }
+
+  &__header-cell {
+    padding-block: 10px;
+
+    font-family: var(--font-gotham-bold);
+    font-size: var(--text-xxs);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  &__row {
+    border-bottom: 1px solid rgb(194, 194, 194);
+  }
+
+  &__cell {
+    vertical-align: middle;
+    font-size: var(--text-xs);
+
+    &.item-main {
+      padding-block: 25px;
+      width: 40%;
+    }
+
+    &.item-price,
+    &.item-total,
+    &.item-quantity {
+      width: 17.5%;
+      font-family: var(--font-gotham);
+      font-size: 14.5px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+
+    & a {
+      width: min(30%, 200px);
+    }
+
+    & .item-img {
+      height: 100px;
+      min-width: 80px;
+      width: 100%;
+      border: 7px solid var(--color-grey-light-2);
+      object-fit: cover;
+
+      &:hover {
+        border: 2px solid var(--color-accent-1);
+      }
+    }
+
+    & .item-title {
+      margin-inline: 20px;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+    }
+  }
+
+  &__quantity {
+    &--wrapper {
+      width: fit-content;
+      border: 1px solid var(--color-grey-dark-2);
+    }
+
+    &-input {
+      margin-inline: 1px;
+      padding: 10px;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      &:focus {
+        outline: 1px solid;
+      }
+    }
+
+    &-btn {
+      padding: 7px;
+      background: white;
+    }
+  }
+
+  &__btn-delete {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: var(--font-gotham-bold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-text-light);
+      background-color: var(--color-primary);
+    }
+  }
+}
+
+.cart-empty {
+  &--wrapper {
+    @extend %parent-with-centered-children;
+    flex-direction: column;
+    gap: 30px;
+    height: clamp(300px, 75vh, 1200px);
+  }
+
+  &__message {
+    text-transform: uppercase;
+    font-family: var(--font-gotham-bold);
+    letter-spacing: 2px;
+  }
+
+  &__link {
+    font-size: var(--text-sm);
+    font-family: var(--font-courier);
+    text-transform: uppercase;
+    text-underline-offset: 5px;
+    letter-spacing: 2px;
+  }
+}
