@@ -1,37 +1,99 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import CartContext from '../context/CartContext';
 
 import { allProductsData } from '../data/productData';
+
+const emptyProduct = {
+  id: '',
+  brand: '',
+  title: '',
+  price: '',
+  originalPrice: '',
+  description: '',
+  technicalDetails: [],
+  type: '',
+  color: '',
+  quantity: '',
+  onSale: '',
+  images: {
+    main: '',
+    side: '',
+  },
+};
 
 function ProductPage() {
   const { productId } = useParams();
 
-  const [product, setProduct] = useState({
-    id: '',
-    brand: '',
-    title: '',
-    price: '',
-    originalPrice: '',
-    description: '',
-    technicalDetails: [],
-    type: '',
-    color: '',
-    quantity: '',
-    onSale: '',
-    images: {
-      main: '',
-      side: '',
-    },
-  });
+  const [cartItems, setCartItems] = useContext(CartContext);
+
+  const [product, setProduct] = useState(emptyProduct);
   const [activeImg, setActiveImg] = useState(1);
   const [desiredQty, setDesiredQty] = useState(1);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const ERROR_MESSAGE =
+    'We do not have enough stocks for your current order. Contact us directly to get more information';
 
   useEffect(() => {
     setProduct(() => allProductsData.find((p) => p.id === productId));
   }, [productId]);
 
+  useEffect(() => {
+    setTimeout(() => setErrorMessage(''), 10000);
+  });
+
   const handleDesiredQty = (e) => {
     setDesiredQty(() => e.target.value);
+  };
+
+  const updateQuantity = () => {
+    setCartItems(() =>
+      cartItems.map((cartItem) => {
+        if (cartItem.itemId !== productId) return cartItem;
+
+        return {
+          ...cartItem,
+          quantity: cartItem.quantity + desiredQty,
+        };
+      }),
+    );
+  };
+
+  const addNewItem = () =>
+    setCartItems(() => [
+      ...cartItems,
+      {
+        itemId: productId,
+        quantity: desiredQty,
+      },
+    ]);
+
+  const addToCart = (e) => {
+    e.preventDefault();
+
+    const isInCart = cartItems.find((ci) => ci.itemId === productId);
+    const newQuantity = +isInCart.quantity + +desiredQty;
+
+    // Validation for new quantity
+    if (
+      desiredQty > product.quantity ||
+      (isInCart && newQuantity > product.quantity)
+    ) {
+      setErrorMessage(ERROR_MESSAGE);
+      return;
+    }
+
+    // Update quantity if new quantity is valid
+    if (isInCart && newQuantity <= product.quantity) {
+      updateQuantity();
+      return;
+    }
+
+    // If no match in cart and quantity is valid, add new item
+    addNewItem();
+    setDesiredQty(1);
+    setErrorMessage('');
   };
 
   return (
@@ -125,7 +187,7 @@ function ProductPage() {
             </div>
           )}
           {product.quantity > 0 ? (
-            <>
+            <form onSubmit={addToCart} noValidate>
               <label
                 htmlFor="pd-quantity"
                 className=" pd-pg__opt-label pd-pg__quantity-label"
@@ -142,10 +204,14 @@ function ProductPage() {
                   value={desiredQty}
                 />
               </label>
-              <button className="pd-pg__btn-add-cart" type="button">
+              <button className="pd-pg__btn-add-cart" type="submit">
                 Add to Cart
               </button>
-            </>
+
+              {errorMessage && (
+                <span className="pd-pg__error">{errorMessage}</span>
+              )}
+            </form>
           ) : (
             <div className="pd-pg__quantity-sold-out">
               Item is currently sold out. Keep posted for updates!
