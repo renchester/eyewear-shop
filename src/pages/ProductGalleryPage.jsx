@@ -57,7 +57,7 @@ function ProductGalleryPage({ categoryType }) {
   }, [categoryData, setBannerContent]);
 
   const handlePageClick = (e) => {
-    setSearch({ page: e.selected + 1 });
+    setSearch({ page: +e.selected + 1 });
   };
 
   return (
@@ -67,20 +67,33 @@ function ProductGalleryPage({ categoryType }) {
           {currentItems.map((item) => (
             <ProductCard content={item} key={nanoid()} />
           ))}
-          <ReactPaginate
-            breakLabel="..."
-            nextLabel="next >"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
-            pageCount={pageCount}
-            previousLabel="< previous"
-            renderOnZeroPageCount={null}
-          />
         </>
       ) : (
         <div>No items</div>
       )}
-      <span aria-hidden />
+      {currentItems.length > 0 && (
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel="next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          previousLabel="< prev"
+          renderOnZeroPageCount={null}
+          initialPage={currentPage - 1}
+          containerClassName="pgnt__container"
+          pageClassName="pgnt__li"
+          activeClassName="active"
+          pageLinkClassName="pgnt__link"
+          activeLinkClassName="active"
+          previousClassName="pgnt__btn pgnt__btn--prev"
+          previousLinkClassName="pgnt__btn-link"
+          nextClassName="pgnt__btn pgnt__btn--next"
+          nextLinkClassName="pgnt__btn-link "
+          disabledClassName="disabled"
+          disabledLinkClassName="disabled"
+        />
+      )}
     </>
   );
 }

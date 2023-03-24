@@ -1,12 +1,14 @@
 @import '../mixins';
 
 .products {
+  position: relative;
   margin-inline: 60px;
 
   &--wrapper {
     @include center-self(horizontal);
     width: var(--page-width);
-    margin-block: 80px;
+    margin-top: 80px;
+    margin-bottom: 150px;
     display: grid;
     grid-template-columns: auto 1fr;
   }

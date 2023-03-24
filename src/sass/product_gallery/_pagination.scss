@@ -1,0 +1,66 @@
+@import '../mixins';
+
+.pgnt {
+  &__container {
+    @include center-self(horizontal, absolute);
+    top: 100%;
+    width: 100%;
+    margin-top: 5px;
+
+    @extend %parent-with-centered-children;
+    font-family: var(--font-gotham-book);
+  }
+
+  &__li {
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  &__link {
+    padding: 5px;
+
+    &.active {
+      color: var(--color-primary);
+      border-bottom: 1px solid;
+    }
+  }
+
+  &__btn {
+    --btn-margin: 15px;
+
+    color: var(--color-primary);
+    border: 1.2px solid currentColor;
+    border-radius: 100px;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    &.disabled {
+      display: none;
+    }
+
+    &--prev {
+      margin-right: var(--btn-margin);
+    }
+
+    &--next {
+      margin-left: var(--btn-margin);
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background: var(--color-primary);
+      color: var(--color-text-light);
+    }
+
+    &-link {
+      display: inline-block;
+      padding: 15px 20px;
+      height: 100%;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  }
+}
