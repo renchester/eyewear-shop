@@ -49,8 +49,8 @@ function ProductGalleryPage({ categoryType }) {
   }, [categoryType]);
 
   useEffect(() => {
-    document.title = categoryData.documentTitle;
-  }, [categoryData]);
+    document.title = `${categoryData.documentTitle} - Page ${currentPage}`;
+  }, [categoryData, currentPage]);
 
   useEffect(() => {
     setBannerContent(() => categoryData.banner);
