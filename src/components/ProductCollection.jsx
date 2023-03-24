@@ -7,9 +7,11 @@ import bannerImg from '../assets/img/unsplash/frame-9.jpg';
 import ProductCard from './ProductCard';
 
 import { allProductsData } from '../data/productData';
+import sortProducts from '../utils/sortProducts';
 
 function ProductCollection() {
-  const [, setBannerContent] = useOutletContext();
+  const { productSort, setBannerContent } = useOutletContext();
+  const sortedProductsData = sortProducts(allProductsData, productSort);
 
   useEffect(() => {
     setBannerContent(() => ({
@@ -22,7 +24,7 @@ function ProductCollection() {
 
   return (
     <>
-      {allProductsData.map((item) => (
+      {sortedProductsData.map((item) => (
         <ProductCard content={item} key={nanoid()} />
       ))}
     </>

@@ -11,6 +11,12 @@ function ProductGalleryLayout() {
     img: '',
   });
 
+  const [productSort, setProductSort] = useState('recommended');
+
+  const handleProductSort = (e) => {
+    setProductSort(() => e.target.value);
+  };
+
   return (
     <div className="screen-product">
       <ProductBanner content={bannerContent} />
@@ -25,6 +31,7 @@ function ProductGalleryLayout() {
                 id="product-sort"
                 className="products-sorter__selection"
                 defaultValue="recommended"
+                onChange={handleProductSort}
               >
                 <option value="recommended">Recommended</option>
                 <option value="alphabetical-ascending">
@@ -39,7 +46,9 @@ function ProductGalleryLayout() {
             </label>
           </div>
           <section className="products-display">
-            <Outlet context={[bannerContent, setBannerContent]} />
+            <Outlet
+              context={{ bannerContent, setBannerContent, productSort }}
+            />
           </section>
         </main>
       </div>

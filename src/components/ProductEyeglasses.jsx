@@ -7,9 +7,11 @@ import ProductCard from './ProductCard';
 import bannerImg from '../assets/img/unsplash/frame-7.jpg';
 
 import { eyeglassesData } from '../data/productData';
+import sortProducts from '../utils/sortProducts';
 
 function ProductEyeglasses() {
-  const [, setBannerContent] = useOutletContext();
+  const { productSort, setBannerContent } = useOutletContext();
+  const sortedEyeglassesData = sortProducts(eyeglassesData, productSort);
 
   useEffect(() => {
     setBannerContent(() => ({
@@ -22,7 +24,7 @@ function ProductEyeglasses() {
 
   return (
     <>
-      {eyeglassesData.map((item) => (
+      {sortedEyeglassesData.map((item) => (
         <ProductCard content={item} key={nanoid()} />
       ))}
     </>
