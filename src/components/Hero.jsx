@@ -28,9 +28,11 @@ function Hero() {
               <h3 className="hero-item__title">{item.title}</h3>
               <p className="hero-item__details">{item.details}</p>
             </div>
-            <button className="hero-item__button btn" type="button">
-              <Link to="/products">Shop Now</Link>
-            </button>
+            <Link to="/products">
+              <button className="hero-item__button btn" type="button">
+                Shop Now
+              </button>
+            </Link>
           </div>
         </div>
       ))}
