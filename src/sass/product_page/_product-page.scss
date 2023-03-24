@@ -2,6 +2,7 @@
 
 .pd-pg {
   @include center-self(horizontal);
+  background: white;
   width: var(--page-width);
   display: flex;
   padding-block: 50px;

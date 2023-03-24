@@ -4,14 +4,19 @@
   &-page {
     @include center-self(horizontal);
 
-    @extend %parent-with-centered-children;
+    // @extend %parent-with-centered-children;
+    display: flex;
     flex-direction: column;
-    margin-block: 50px;
+    align-items: center;
+    padding-top: 75px;
+    height: 100%;
+    background: white;
+    flex-direction: column;
     width: var(--page-width);
   }
 
   &__title {
-    margin-block: 25px;
+    margin-bottom: 20px;
     font-family: var(--font-gotham-bold);
     font-size: var(--text-lg);
     letter-spacing: 2px;
