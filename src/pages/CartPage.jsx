@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { nanoid } from 'nanoid';
@@ -13,9 +13,14 @@ import formatPrice from '../utils/formatPrice';
 function CartPage() {
   const [cart] = useContext(CartContext);
 
+  useEffect(() => {
+    document.title = 'Your Shopping Cart | SAVANT Eyewear Store';
+  }, []);
+
   const checkOutProducts = (e) => {
     e.preventDefault();
 
+    // eslint-disable-next-line no-alert
     alert('Checkout successful');
   };
 

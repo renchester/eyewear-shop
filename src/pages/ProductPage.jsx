@@ -37,6 +37,10 @@ function ProductPage() {
     'We do not have enough stocks for your current order. Contact us directly to get more information';
 
   useEffect(() => {
+    document.title = `${product.title.toUpperCase()} | SAVANT Eyewear Online Store`;
+  }, [product.title]);
+
+  useEffect(() => {
     setProduct(() => allProductsData.find((p) => p.id === productId));
   }, [productId]);
 

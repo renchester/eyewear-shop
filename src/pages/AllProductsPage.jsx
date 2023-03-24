@@ -2,20 +2,24 @@ import { useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 
-import ProductCard from './ProductCard';
+import bannerImg from '../assets/img/unsplash/frame-9.jpg';
 
-import bannerImg from '../assets/img/unsplash/sun-1.jpg';
+import ProductCard from '../components/ProductCard';
 
-import { sunglassesData } from '../data/productData';
+import { allProductsData } from '../data/productData';
 import sortProducts from '../utils/sortProducts';
 
-function ProductSunglasses() {
+function ProductCollection() {
   const { productSort, setBannerContent } = useOutletContext();
-  const sortedSunglassesData = sortProducts(sunglassesData, productSort);
+  const sortedProductsData = sortProducts(allProductsData, productSort);
+
+  useEffect(() => {
+    document.title = 'COLLECTION | Shop all products - SAVANT Eyewear Store';
+  }, []);
 
   useEffect(() => {
     setBannerContent(() => ({
-      title: 'Sunnies Store',
+      title: 'All Products',
       description:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, earum fugit, suscipit provident maiores voluptatem nemo repellendus nesciunt quo perferendis est ratione quibusdam, vero doloremque doloribus dolor dolorem saepe? Nostrum.',
       img: bannerImg,
@@ -24,10 +28,10 @@ function ProductSunglasses() {
 
   return (
     <>
-      {sortedSunglassesData.map((item) => (
+      {sortedProductsData.map((item) => (
         <ProductCard content={item} key={nanoid()} />
       ))}
     </>
   );
 }
-export default ProductSunglasses;
+export default ProductCollection;
