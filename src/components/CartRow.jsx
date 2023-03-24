@@ -68,7 +68,11 @@ function CartRow(props) {
     <tr key={nanoid()} className="cart-item__row">
       <td className="cart-item__cell item-main">
         <div className="cart-item__main">
-          <Link to={`/products/${product.id}`}>
+          <Link
+            to={`/products/${
+              product.type === 'sunnies' ? 'sunglasses' : 'eyeglasses'
+            }/${product.id}`}
+          >
             <img
               src={product.images.main}
               alt={`${product.title} front view`}
