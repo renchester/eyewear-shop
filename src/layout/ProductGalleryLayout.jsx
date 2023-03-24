@@ -46,9 +46,7 @@ function ProductGalleryLayout() {
             </label>
           </div>
           <section className="products-display">
-            <Outlet
-              context={{ bannerContent, setBannerContent, productSort }}
-            />
+            <Outlet context={{ setBannerContent, productSort }} />
           </section>
         </main>
       </div>

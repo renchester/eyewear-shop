@@ -15,10 +15,7 @@ import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
 import CartPage from './pages/CartPage';
-
-import ProductCollection from './components/ProductCollection';
-import ProductSunglasses from './components/ProductSunglasses';
-import ProductEyeglasses from './components/ProductEyeglasses';
+import ProductGalleryPage from './pages/ProductGalleryPage';
 
 import './sass/main.scss';
 
@@ -31,14 +28,18 @@ function RouteSwitch() {
           <Route index path="/" element={<HomePage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route element={<ProductGalleryLayout />}>
-            <Route index path="/products" element={<ProductCollection />} />
+            <Route
+              index
+              path="/products"
+              element={<ProductGalleryPage categoryType="allProducts" />}
+            />
             <Route
               path="/products/eyeglasses"
-              element={<ProductEyeglasses />}
+              element={<ProductGalleryPage categoryType="eyeglasses" />}
             />
             <Route
               path="/products/sunglasses"
-              element={<ProductSunglasses />}
+              element={<ProductGalleryPage categoryType="sunglasses" />}
             />
           </Route>
           <Route element={<ProductPageLayout />}>
