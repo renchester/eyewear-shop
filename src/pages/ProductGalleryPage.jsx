@@ -69,7 +69,9 @@ function ProductGalleryPage({ categoryType }) {
           ))}
         </>
       ) : (
-        <div>No items</div>
+        <div className="products__no-results">
+          Sorry, there are no products matching your search.
+        </div>
       )}
       {currentItems.length > 0 && (
         <ReactPaginate
