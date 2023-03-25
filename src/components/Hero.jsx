@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Flickity from 'react-flickity-component';
+
 import flickityFade from 'flickity-fade';
 import { nanoid } from 'nanoid';
 
@@ -8,8 +9,9 @@ import heroData from '../data/heroData';
 const flickityOptions = {
   fade: true,
   wrapAround: true,
-  initialIndex: 3,
-  autoPlay: 10000,
+  initialIndex: 0,
+  autoPlay: 7000,
+  pauseAutoPlayOnHover: false,
 };
 
 function Hero() {
@@ -28,10 +30,8 @@ function Hero() {
               <h3 className="hero-item__title">{item.title}</h3>
               <p className="hero-item__details">{item.details}</p>
             </div>
-            <Link to="/products">
-              <button className="hero-item__button btn" type="button">
-                Shop Now
-              </button>
+            <Link to="/products" className="hero-item__link">
+              Shop Now
             </Link>
           </div>
         </div>

@@ -11,14 +11,14 @@ import hero7 from '../assets/img/unsplash/hero-7.jpg';
 const heroData = [
   {
     id: nanoid(),
-    img: hero1,
+    img: hero4,
     title: 'Collection',
     details:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eius placeat qui itaque nesciunt exercitationem vero nemo sunt hic unde magni provident voluptas cupiditate quam, atque voluptatum fugiat asperiores consequatur!',
   },
   {
     id: nanoid(),
-    img: hero2,
+    img: hero7,
     title: 'Collection',
     details:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eius placeat qui itaque nesciunt exercitationem vero nemo sunt hic unde magni provident voluptas cupiditate quam, atque voluptatum fugiat asperiores consequatur!',
@@ -30,13 +30,7 @@ const heroData = [
     details:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eius placeat qui itaque nesciunt exercitationem vero nemo sunt hic unde magni provident voluptas cupiditate quam, atque voluptatum fugiat asperiores consequatur!',
   },
-  {
-    id: nanoid(),
-    img: hero4,
-    title: 'Collection',
-    details:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eius placeat qui itaque nesciunt exercitationem vero nemo sunt hic unde magni provident voluptas cupiditate quam, atque voluptatum fugiat asperiores consequatur!',
-  },
+
   {
     id: nanoid(),
     img: hero5,
@@ -53,7 +47,14 @@ const heroData = [
   },
   {
     id: nanoid(),
-    img: hero7,
+    img: hero2,
+    title: 'Collection',
+    details:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eius placeat qui itaque nesciunt exercitationem vero nemo sunt hic unde magni provident voluptas cupiditate quam, atque voluptatum fugiat asperiores consequatur!',
+  },
+  {
+    id: nanoid(),
+    img: hero1,
     title: 'Collection',
     details:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae eius placeat qui itaque nesciunt exercitationem vero nemo sunt hic unde magni provident voluptas cupiditate quam, atque voluptatum fugiat asperiores consequatur!',
