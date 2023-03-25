@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import ImageWrapper from './ImageWrapper';
+
 function ProductBanner(props) {
   const { content } = props;
 
@@ -10,12 +12,14 @@ function ProductBanner(props) {
         <p className="banner-main__description">{content.description}</p>
       </div>
       <div className="banner-img--wrapper">
-        <img
-          src={content.img}
-          alt={content.description}
-          className="banner-img"
-          loading="lazy"
-        />
+        <ImageWrapper>
+          <img
+            src={content.img}
+            alt={content.description}
+            className="banner-img"
+            loading="lazy"
+          />
+        </ImageWrapper>
       </div>
     </section>
   );

@@ -1,17 +1,27 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import ImageWrapper from '../components/ImageWrapper';
 import dogPicture from '../assets/img/unsplash/frame-11.jpg';
 
 function UnderConstruction() {
+  useEffect(() => {
+    document.title = '404 Not Found - SAVANT Eyewear Online Store';
+  }, []);
+
   return (
     <div className="tbd">
       <span className="tbd__404">404 - ERROR</span>
       <h1 className="tbd__title">OOPS!</h1>
-      <img
-        src={dogPicture}
-        alt="A golden retriever wearing glasses"
-        className="tbd__img"
-      />
+      <div className="tbd__img--wrapper">
+        <ImageWrapper>
+          <img
+            src={dogPicture}
+            alt="A golden retriever wearing glasses"
+            className="tbd__img"
+          />
+        </ImageWrapper>
+      </div>
       <h3 className="tbd__subtitle">This is awkward...</h3>
       <p className="tbd__text">
         This page either doesn&apos;t exist or is under construction. Sorry

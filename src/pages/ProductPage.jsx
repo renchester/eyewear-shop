@@ -2,6 +2,8 @@ import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import CartContext from '../context/CartContext';
 
+import ImageWrapper from '../components/ImageWrapper';
+
 import { allProductsData } from '../data/productData';
 
 const emptyProduct = {
@@ -41,7 +43,9 @@ function ProductPage() {
   }, [product.title]);
 
   useEffect(() => {
-    setProduct(() => allProductsData.find((p) => p.id === productId));
+    const target = allProductsData.find((p) => p.id === productId);
+
+    setProduct(() => target || emptyProduct);
   }, [productId]);
 
   useEffect(() => {
@@ -129,19 +133,21 @@ function ProductPage() {
           /<span className="pd-pg__nav-link">{product.brand}</span>
         </nav>
         <div className="pd-pg__img--wrapper">
-          {activeImg === 1 ? (
-            <img
-              src={product.images.main}
-              alt={`${product.title} front view`}
-              className="pd-pg__active-img"
-            />
-          ) : (
-            <img
-              src={product.images.side}
-              alt={`${product.title} side view`}
-              className="pd-pg__active-img"
-            />
-          )}
+          <ImageWrapper>
+            {activeImg === 1 ? (
+              <img
+                src={product.images.main}
+                alt={`${product.title} front view`}
+                className="pd-pg__active-img"
+              />
+            ) : (
+              <img
+                src={product.images.side}
+                alt={`${product.title} side view`}
+                className="pd-pg__active-img"
+              />
+            )}
+          </ImageWrapper>
           <div className="pd-pg__img-thumbs">
             <button
               className={`pd-pg__img-thumbnail--wrapper ${

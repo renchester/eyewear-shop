@@ -1,0 +1,12 @@
+.img-wrapper {
+  overflow: hidden;
+
+  & img {
+    object-fit: cover;
+    transition: transform 300ms linear;
+
+    &:hover {
+      transform: scale(1.025);
+    }
+  }
+}

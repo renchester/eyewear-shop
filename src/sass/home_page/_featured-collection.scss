@@ -29,19 +29,11 @@
   }
 
   &__img.main {
-    filter: saturate(105%) brightness(105%) contrast(105%);
-    &:hover,
-    &:focus-within {
-      filter: grayscale(30%) brightness(108%) sepia(10%);
-    }
+    filter: brightness(105%) contrast(105%);
   }
 
   &__img.model {
     filter: saturate(80%) brightness(110%) contrast(110%);
-
-    &:hover {
-      filter: grayscale(60%) brightness(110%) sepia(20%);
-    }
   }
 
   &__text-wrapper {

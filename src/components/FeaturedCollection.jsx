@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import ImageWrapper from './ImageWrapper';
+
 import img1 from '../assets/img/unsplash/ad-3.jpg';
 import img2 from '../assets/img/unsplash/frame-12.jpg';
 
@@ -18,18 +20,22 @@ function FeaturedCollection() {
             FIND OUT NOW
           </Link>
         </div>
-        <img
-          src={img2}
-          alt="Sample of a model"
-          className="featured-coll__img model"
-        />
+        <ImageWrapper>
+          <img
+            src={img2}
+            alt="Sample of a model"
+            className="featured-coll__img model"
+          />
+        </ImageWrapper>
       </div>
       <div className="featured-coll__col-2">
-        <img
-          src={img1}
-          alt="Sample of an ad in the featured collection"
-          className="featured-coll__img main"
-        />
+        <ImageWrapper>
+          <img
+            src={img1}
+            alt="Sample of an ad in the featured collection"
+            className="featured-coll__img main"
+          />
+        </ImageWrapper>
         <Link to="/products" className="featured-coll__btn-link">
           SEE THE COLLECTION
         </Link>
