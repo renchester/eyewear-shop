@@ -30,10 +30,8 @@ function FeaturedCollection() {
           alt="Sample of an ad in the featured collection"
           className="featured-coll__img main"
         />
-        <Link to="/products">
-          <button type="button" className="featured-coll__button">
-            SEE THE COLLECTION
-          </button>
+        <Link to="/products" className="featured-coll__btn-link">
+          SEE THE COLLECTION
         </Link>
       </div>
     </section>

@@ -56,6 +56,7 @@
   }
 
   &__title {
+    padding-top: 10px;
     font-size: var(--text-md);
     font-family: var(--font-gotham-bold);
     letter-spacing: 4px;
@@ -79,22 +80,24 @@
     gap: 10px;
   }
 
-  &__button {
+  &__btn-link {
     background: var(--color-accent-1);
     margin-top: 20px;
-    padding: 20px 25px;
-    color: var(--color-text-light);
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 14px;
     font-family: var(--font-gotham);
-    font-size: var(--text-xxs);
+    color: var(--color-text-light, white);
+    text-decoration: none;
     cursor: pointer;
 
     &:hover {
       background: var(--color-primary);
     }
 
-    & * {
-      text-decoration: none;
-      letter-spacing: 1.5px;
+    & .sample {
+      @extend %parent-with-centered-children;
+      height: 100%;
     }
   }
 }
