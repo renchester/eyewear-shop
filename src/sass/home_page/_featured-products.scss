@@ -1,0 +1,64 @@
+@import '../mixins';
+
+.fp {
+  @include center-self(horizontal);
+  width: var(--page-width);
+  margin-block: 50px;
+  padding-bottom: 50px;
+
+  &__title {
+    @extend %section-title;
+  }
+
+  &__products {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &-product {
+    @extend %parent-with-centered-children;
+    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
+    width: 25%;
+    flex-shrink: 0;
+
+    &:focus {
+      background: var(--color-grey-light-2);
+      outline: none;
+    }
+  }
+
+  &-product__img-wrapper {
+    border: 10px solid var(--color-grey-light-2);
+    &:hover,
+    &:focus {
+      border: 10px solid var(--color-primary);
+    }
+  }
+
+  &-product__img {
+    width: 100%;
+  }
+
+  &-product__title {
+    width: 100%;
+    margin-top: 10px;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  &-product__price {
+    padding-bottom: 30px;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    font-size: var(--text-xs);
+    font-family: var(--font-gotham-book);
+  }
+}

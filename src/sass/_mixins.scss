@@ -87,3 +87,12 @@ $breakpoints: (
   background-size: cover;
   background-position: center;
 }
+
+%section-title {
+  margin-block: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--font-gotham);
+  font-size: var(--text-md);
+}

@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 import Hero from '../components/Hero';
 import FeaturedCollection from '../components/FeaturedCollection';
 import BlogContent from '../components/BlogContent';
+import FeaturedProducts from '../components/FeaturedProducts';
+
+import blogData from '../data/homePageBlogData';
 
 function HomePage() {
   useEffect(() => {
@@ -13,7 +16,8 @@ function HomePage() {
     <div className="screen-home">
       <Hero />
       <FeaturedCollection />
-      <BlogContent />
+      <BlogContent content={blogData} headerTitle="Latest Posts" />
+      <FeaturedProducts />
     </div>
   );
 }
