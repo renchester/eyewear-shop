@@ -16,6 +16,7 @@ import ProductPage from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
 import CartPage from './pages/CartPage';
 import ProductGalleryPage from './pages/ProductGalleryPage';
+import UnderConstruction from './pages/UnderConstruction';
 
 import './sass/main.scss';
 
@@ -53,6 +54,7 @@ function RouteSwitch() {
             />
           </Route>
           <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<UnderConstruction />} />
         </Routes>
         <Footer />
       </CartProvider>
