@@ -9,8 +9,8 @@
     margin-block: 40px;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 5px;
-    font-family: var(--font-gotham-book);
+    letter-spacing: 2px;
+    font-family: var(--font-gotham);
     font-size: var(--text-md);
   }
 
@@ -55,15 +55,25 @@
   }
 
   &-item__description {
+    line-height: 1.3em;
     font-family: var(--font-roboto);
     font-size: var(--text-xs);
     margin-bottom: 10px;
   }
 
   &-item__link {
-    font-family: var(--font-courier);
-    font-size: var(--text-xs);
+    margin-top: 10px;
+    font-family: var(--font-gotham-bold);
+    font-size: var(--text-xxs);
     text-transform: uppercase;
     text-underline-offset: 5px;
+    width: fit-content;
+
+    &:focus,
+    &:hover {
+      color: var(--color-primary);
+      outline: 1px solid black;
+      outline-offset: 5px;
+    }
   }
 }

@@ -1,13 +1,15 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { nanoid } from 'nanoid';
-import blogData from '../data/blogData';
 
-function BlogContent() {
+function BlogContent(props) {
+  const { content, headerTitle } = props;
+
   return (
     <section className="blog">
-      <h3 className="blog__section-title">Latest Posts</h3>
+      <h3 className="blog__section-title">{headerTitle}</h3>
       <div className="blog-posts latest">
-        {blogData.map((item) => (
+        {content.map((item) => (
           <article className="blog-item" key={nanoid()}>
             <img
               src={item.img}
@@ -29,4 +31,20 @@ function BlogContent() {
     </section>
   );
 }
+
+BlogContent.propTypes = {
+  headerTitle: PropTypes.string,
+  content: PropTypes.arrayOf({
+    id: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    img: PropTypes.node,
+  }).isRequired,
+};
+
+BlogContent.defaultProps = {
+  headerTitle: '',
+};
+
 export default BlogContent;
