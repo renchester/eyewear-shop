@@ -12,14 +12,15 @@
   &__nav {
     display: flex;
     gap: 10px;
-    font-size: var(--text-xxs);
-    font-family: var(--font-roboto-mono);
+    font-size: 12.5px;
+    font-family: Helvetica, Arial, sans-serif, monospace;
     font-weight: bold;
+    color: #777777;
 
     &-link {
       text-transform: uppercase;
-      text-underline-offset: 2.2px;
-      letter-spacing: 1px;
+      text-underline-offset: 2px;
+      letter-spacing: 0.5px;
     }
   }
 
@@ -72,29 +73,36 @@
   &__price--wrapper {
     display: flex;
     gap: 12px;
-    font-family: var(--font-roboto-mono);
-    font-size: var(--text-sm);
+    font-family: var(--font-gotham);
+    font-size: var(--text-md);
+    padding-top: 10px;
     padding-bottom: 20px;
     border-bottom: 2px solid var(--color-grey-light-3);
   }
 
   &__og-price {
-    color: var(--color-text-opacity50);
+    font-family: var(--font-gotham-book);
+    color: var(--color-text-opacity75);
     text-decoration: line-through;
   }
 
   &__details {
     margin-top: 30px;
-    line-height: 21px;
-    font-family: var(--font-roboto-mono);
-    font-size: 14px;
+    line-height: 1.65em;
+    font-family: var(--font-raleway);
+    font-size: 14.25px;
+  }
+
+  &__description,
+  &__tech-detail {
+    letter-spacing: 0.75px;
   }
 
   &__tech-details {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 20px;
+    margin-block: 35px;
   }
 
   &__tech-detail {
@@ -129,6 +137,7 @@
     display: flex;
     flex-direction: column;
     gap: 7px;
+    width: fit-content;
   }
 
   &__quantity-input {
@@ -163,21 +172,25 @@
     border: 2px solid currentColor;
     text-transform: uppercase;
     letter-spacing: 1px;
+    cursor: pointer;
 
     &:hover,
     &:focus {
       color: var(--color-text-light);
       background: var(--color-primary);
+      outline: none;
     }
   }
 
   &__btn-add-cart {
+    font-size: var(--text-xs);
     color: var(--color-primary);
     margin-top: 50px;
   }
 
   &__btn-checkout {
-    --color-primary: rgb(151, 119, 77);
+    --color-primary: rgb(173, 142, 100);
+    font-size: var(--text-xs);
     margin-top: 20px;
     display: block;
     text-align: center;
@@ -189,5 +202,51 @@
     color: rgb(231, 0, 0);
     font-size: var(--text-xs);
     font-style: italic;
+  }
+}
+
+.pd-lens {
+  --color-primary: rgb(247, 237, 225);
+
+  @include center-self(horizontal);
+  background: var(--color-primary);
+  width: 100%;
+  margin-top: 75px;
+  padding-block: 60px 70px;
+
+  &__title {
+    font-family: var(--font-gotham-book);
+    font-size: var(--text-md);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  &__steps {
+    @extend %parent-with-centered-children;
+    gap: 50px;
+    align-items: flex-start;
+    margin-top: 40px;
+    padding-inline: 30px;
+  }
+
+  &__step {
+    @extend %parent-with-centered-children;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    width: clamp(200px, 35%, 370px);
+  }
+
+  &__count {
+    font-size: var(--text-lg);
+  }
+
+  &__instruction {
+    font-family: var(--font-raleway);
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5em;
+    letter-spacing: 0.9px;
   }
 }
