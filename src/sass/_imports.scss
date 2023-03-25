@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'Gotham';
-  src: url('../assets/fonts/gotham/GothamMedium.ttf') format('truetype');
+  src: url('../assets/fonts/gotham/Gotham-Medium.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Gotham Book';
-  src: url('../assets/fonts/gotham/GothamBook.ttf') format('truetype');
+  src: url('../assets/fonts/gotham/Gotham-Book.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Gotham Bold';
-  src: url('../assets/fonts/gotham/GothamBold.ttf') format('truetype');
+  src: url('../assets/fonts/gotham/Gotham-Bold.otf') format('opentype');
 }
 
 @font-face {
@@ -25,18 +25,22 @@
 
 @font-face {
   font-family: 'Courier';
-  src: url('../assets/fonts/courier/Courier\ Prime\ Sans.ttf')
-    format('truetype');
+  src: url('../assets/fonts/courier/courier-prime.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Courier Bold';
-  src: url('../assets/fonts/courier/Courier\ Prime\ Sans\ Bold.ttf')
-    format('truetype');
+  src: url('../assets/fonts/courier/courier-prime-bold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Courier Italic';
-  src: url('../assets/fonts/courier/Courier\ Prime\ Sans\ Italic.ttf')
+  src: url('../assets/fonts/courier/courier-prime-italic.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Courier Bold Italic';
+  src: url('../assets/fonts/courier/courier-prime-bold-italic.ttf')
     format('truetype');
 }
