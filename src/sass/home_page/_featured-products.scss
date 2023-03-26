@@ -16,6 +16,11 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 20px;
+
+    &:focus,
+    &:hover {
+      outline: none;
+    }
   }
 
   &-product {
@@ -23,9 +28,11 @@
     flex-direction: column;
     gap: 10px;
     text-decoration: none;
-    width: 25%;
+    width: 30%;
+    margin-right: 30px;
     flex-shrink: 0;
 
+    &:hover,
     &:focus {
       background: var(--color-grey-light-2);
       outline: none;
@@ -33,10 +40,14 @@
   }
 
   &-product__img-wrapper {
-    border: 10px solid var(--color-grey-light-2);
+    border: 7px solid var(--color-grey-light-2);
     &:hover,
     &:focus {
-      border: 10px solid var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    @include breakpoint(md) {
+      border-width: 5px;
     }
   }
 
@@ -51,6 +62,11 @@
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 1px;
+    word-break: break-all;
+
+    @include breakpoint(md) {
+      font-size: 12.5px;
+    }
   }
 
   &-product__price {
@@ -60,5 +76,40 @@
     text-align: center;
     font-size: var(--text-xs);
     font-family: var(--font-gotham-book);
+
+    @include breakpoint(md) {
+      font-size: 12px;
+    }
+  }
+
+  .flickity {
+    &-viewport {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    &-button {
+      @include center-self(vertical, absolute);
+      width: 30px;
+      height: 30px;
+      margin-inline: 10px;
+      background: transparent;
+      transform: scaleY(150%);
+      fill: var(--color-accent-1);
+      cursor: pointer;
+
+      &.previous {
+        left: 0;
+      }
+
+      &.next {
+        right: 0;
+      }
+    }
+
+    &-page-dots {
+      display: none;
+    }
   }
 }

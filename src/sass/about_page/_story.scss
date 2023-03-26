@@ -25,6 +25,10 @@
       letter-spacing: 0.5px;
       font-size: 14px;
       line-height: 1.5em;
+
+      @include breakpoint(sm) {
+        font-size: 12px;
+      }
     }
   }
 
@@ -35,6 +39,12 @@
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin-block: 40px;
+
+    @include breakpoint(md) {
+      gap: 0;
+      display: flex;
+      flex-direction: column;
+    }
 
     &__panel {
       display: flex;
@@ -52,6 +62,41 @@
         align-items: flex-end;
         text-align: right;
       }
+
+      @include breakpoint(md) {
+        &,
+        &.panel-1,
+        &.panel-5,
+        &.panel-3 {
+          align-items: center;
+          text-align: center;
+          gap: 10px;
+        }
+
+        &.panel-1 {
+          order: 1;
+        }
+
+        &.panel-2 {
+          order: 2;
+        }
+
+        &.panel-3 {
+          order: 4;
+        }
+
+        &.panel-4 {
+          order: 3;
+        }
+
+        &.panel-5 {
+          order: 5;
+        }
+
+        &.panel-6 {
+          order: 6;
+        }
+      }
     }
 
     &__title {
@@ -67,6 +112,14 @@
       font-family: var(--font-raleway);
       font-size: 15.5px;
       line-height: 1.4em;
+
+      @include breakpoint(lg) {
+        width: 100%;
+      }
+
+      @include breakpoint(sm) {
+        font-size: 12.5px;
+      }
     }
 
     &__btn-link {
@@ -91,11 +144,22 @@
     }
 
     &__img {
-      max-width: 550px;
+      width: 550px;
       filter: grayscale(50%);
 
       &:hover {
         filter: grayscale(0%);
+      }
+
+      @include breakpoint(lg) {
+        aspect-ratio: 1 / 1.2;
+        object-position: center;
+      }
+
+      @include breakpoint(md) {
+        width: 100%;
+        height: 500px;
+        object-position: 100% 20%;
       }
     }
   }
@@ -105,8 +169,13 @@
     display: grid;
     grid-template-columns: 50% 50%;
 
+    @include breakpoint(md) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
     &__info {
-      background: var(--color-primary);
+      background: var(--color-accent-2);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -115,6 +184,10 @@
       padding: 30px;
       color: var(--color-text-light);
       text-align: right;
+
+      @include breakpoint(md) {
+        padding-block: 50px;
+      }
     }
 
     &__title {
@@ -128,10 +201,18 @@
       font-family: var(--font-raleway);
       font-size: 15.5px;
       line-height: 1.5em;
+
+      @include breakpoint(sm) {
+        font-size: 12px;
+      }
     }
 
     &__img-wrapper {
       max-height: 500px;
+
+      @include breakpoint(md) {
+        height: 350px;
+      }
     }
 
     &__img {
@@ -148,6 +229,10 @@
     &__link {
       text-underline-offset: 5px;
       letter-spacing: 0.5px;
+
+      @include breakpoint(sm) {
+        font-size: 13px;
+      }
     }
   }
 

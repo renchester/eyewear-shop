@@ -34,13 +34,15 @@ function BlogContent(props) {
 
 BlogContent.propTypes = {
   headerTitle: PropTypes.string,
-  content: PropTypes.arrayOf({
-    id: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    img: PropTypes.node,
-  }).isRequired,
+  content: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      img: PropTypes.node,
+    }),
+  ).isRequired,
 };
 
 BlogContent.defaultProps = {

@@ -10,6 +10,11 @@
   display: grid;
   grid-template-columns: 40% auto;
 
+  @include breakpoint(md) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   &__col-1,
   &__col-2 {
     position: relative;
@@ -22,10 +27,36 @@
     align-items: flex-start;
     gap: 30px;
     padding-inline: 40px;
+
+    @include breakpoint(md) {
+      padding-inline: 0;
+    }
+  }
+
+  &__col-2 {
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+
+    @include breakpoint(md) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+  }
+
+  &__img-wrapper {
+    width: 100%;
   }
 
   &__img {
     width: 100%;
+
+    @include breakpoint(md) {
+      height: 400px;
+    }
   }
 
   &__img.main {
@@ -42,8 +73,13 @@
     gap: 15px;
     cursor: default;
 
-    &:hover {
-      color: var(--color-primary);
+    @include breakpoint(md) {
+      @include center-self(horizontal);
+      gap: 20px;
+      max-width: 400px;
+      margin-block: 30px;
+      text-align: center;
+      line-height: 1.2em;
     }
   }
 
@@ -66,12 +102,6 @@
     letter-spacing: 1.5px;
   }
 
-  &__col-2 {
-    align-items: flex-start;
-    justify-content: center;
-    gap: 10px;
-  }
-
   &__btn-link {
     background: var(--color-accent-1);
     margin-top: 20px;
@@ -90,6 +120,10 @@
     & .sample {
       @extend %parent-with-centered-children;
       height: 100%;
+    }
+
+    @include breakpoint(md) {
+      display: none;
     }
   }
 }

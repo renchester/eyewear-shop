@@ -11,16 +11,14 @@ function ProductBanner(props) {
         <h4 className="banner-main__title">{content.title}</h4>
         <p className="banner-main__description">{content.description}</p>
       </div>
-      <div className="banner-img--wrapper">
-        <ImageWrapper>
-          <img
-            src={content.img}
-            alt={content.description}
-            className="banner-img"
-            loading="lazy"
-          />
-        </ImageWrapper>
-      </div>
+      <ImageWrapper className="banner-img--wrapper">
+        <img
+          src={content.img}
+          alt={content.description}
+          className="banner-img"
+          loading="lazy"
+        />
+      </ImageWrapper>
     </section>
   );
 }

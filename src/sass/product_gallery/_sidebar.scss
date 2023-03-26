@@ -25,6 +25,9 @@
   &__link.active {
     background-color: var(--color-primary);
     font-weight: bold;
-    color: var(--color-text-light);
+  }
+
+  @include breakpoint(xl) {
+    display: none;
   }
 }

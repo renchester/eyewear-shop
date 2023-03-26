@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { nanoid } from 'nanoid';
+import Flickity from 'react-flickity-component';
 
 import ImageWrapper from './ImageWrapper';
 
@@ -17,10 +18,20 @@ function FeaturedProducts() {
     allProductsData[40],
   ]);
 
+  const flickityOptions = {
+    freeScroll: true,
+    wrapAround: true,
+    initialIndex: 0,
+    autoPlay: 10000,
+    pauseAutoPlayOnHover: false,
+  };
+
   return (
     <section className="fp featured-products">
       <h3 className="fp__title">New Arrivals</h3>
-      <ul
+      <Flickity
+        options={flickityOptions}
+        elementType="div"
         className="fp__products
       "
       >
@@ -45,7 +56,7 @@ function FeaturedProducts() {
             <span className="fp-product__price">{item.price}</span>
           </Link>
         ))}
-      </ul>
+      </Flickity>
     </section>
   );
 }

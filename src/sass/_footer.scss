@@ -17,6 +17,11 @@
     padding-bottom: 60px;
     width: var(--page-width);
 
+    @include breakpoint(md) {
+      flex-direction: column-reverse;
+      padding-bottom: 20px;
+    }
+
     &__links--container {
       display: flex;
       align-items: flex-start;
@@ -27,6 +32,18 @@
       padding-right: 15px;
       width: 50%;
       border-right: 1px solid;
+
+      @include breakpoint(xl) {
+        gap: 20px;
+      }
+
+      @include breakpoint(md) {
+        border-top: 1px solid;
+        border-right: none;
+        padding-inline: 20px;
+        gap: 40px;
+        width: 100%;
+      }
     }
 
     &__links {
@@ -53,6 +70,10 @@
         text-decoration: underline;
         text-underline-offset: 3px;
       }
+
+      @include breakpoint(sm) {
+        font-size: 10.5px;
+      }
     }
 
     &__contact {
@@ -61,6 +82,11 @@
       width: 50%;
       padding-inline: 30px;
       text-align: center;
+
+      @include breakpoint(md) {
+        width: 100%;
+        padding-bottom: 40px;
+      }
 
       &-info {
         display: flex;
@@ -113,6 +139,12 @@
     font-family: var(--font-roboto-mono);
     font-weight: bold;
     color: rgb(71, 71, 71);
+
+    @include breakpoint(sm) {
+      font-size: 9px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
   }
 
   &-gh {
@@ -150,7 +182,7 @@
 
 .nletter {
   --input-padding-block: 15px;
-
+  display: flex;
   gap: 15px;
   padding-block: 40px;
   padding-inline: 15px;
@@ -161,7 +193,13 @@
   &--wrapper {
     @include center-self(horizontal);
     @extend %parent-with-centered-children;
-    width: var(--page-width);
+    max-width: 1200px;
+
+    @include breakpoint(xl) {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
   }
 
   &__title {
@@ -178,14 +216,24 @@
     line-height: 1.5em;
     font-size: 12px;
     font-family: var(--font-roboto-mono);
+
+    @include breakpoint(md) {
+      font-size: 10px;
+    }
   }
 
   &__form {
     display: flex;
     justify-content: flex-end;
     align-items: stretch;
-    height: 50%;
+    height: 100%;
     width: clamp(200px, 50%, 600px);
+
+    @include breakpoint(xl) {
+      margin-top: 10px;
+      justify-content: center;
+      width: 100%;
+    }
   }
 
   &__email {

@@ -16,6 +16,12 @@
 
   &-posts {
     display: flex;
+
+    @include breakpoint(lg) {
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 35px;
+    }
   }
 
   &-item {
@@ -24,6 +30,11 @@
     gap: 20px;
     width: calc(100% / 3);
     margin-inline: 25px;
+
+    @include breakpoint(lg) {
+      flex-direction: row;
+      width: 100%;
+    }
   }
 
   &-item__img {
@@ -31,11 +42,22 @@
     height: 60%;
     object-fit: cover;
     align-self: center;
+
+    @include breakpoint(lg) {
+      width: 40%;
+      height: 300px;
+      object-fit: cover;
+    }
   }
 
   &-item__text-wrapper {
     display: flex;
     flex-direction: column;
+
+    @include breakpoint(lg) {
+      width: 50%;
+      justify-content: center;
+    }
   }
 
   &-item__category {
@@ -56,9 +78,13 @@
 
   &-item__description {
     line-height: 1.3em;
-    font-family: var(--font-roboto);
+    font-family: var(--font-raleway);
     font-size: var(--text-xs);
     margin-bottom: 10px;
+
+    @include breakpoint(sm) {
+      font-size: 12.5px;
+    }
   }
 
   &-item__link {

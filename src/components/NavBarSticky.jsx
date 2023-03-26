@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
 import CartContext from '../context/CartContext';
@@ -18,6 +18,24 @@ function NavBarSticky(props) {
   const hideMenu = () => {
     setMenuVisibility(false);
   };
+
+  useEffect(() => {
+    const windowHideMenuClick = (e) => {
+      if (!e.target.closest('.nav')) hideMenu();
+    };
+
+    const windowHideMenuEsc = (e) => {
+      if (e.key === 'Escape') hideMenu();
+    };
+
+    window.addEventListener('click', windowHideMenuClick);
+    window.addEventListener('keydown', windowHideMenuEsc);
+
+    return () => {
+      window.removeEventListener('click', windowHideMenuClick);
+      window.removeEventListener('keydown', windowHideMenuEsc);
+    };
+  }, []);
 
   return (
     <nav className="nav nav--sticky">

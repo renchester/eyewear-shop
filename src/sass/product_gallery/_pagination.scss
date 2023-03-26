@@ -14,26 +14,42 @@
   &__li {
     padding: 20px;
     cursor: pointer;
+
+    @include breakpoint(sm) {
+      padding: 20px 10px;
+    }
   }
 
   &__link {
     padding: 5px;
+    border-radius: 5px;
 
     &.active {
-      color: var(--color-primary);
+      color: var(--color-accent-1);
       border-bottom: 1px solid;
+    }
+
+    &:focus,
+    &:hover {
+      background: var(--color-accent-1);
+      color: var(--color-text-light);
+      outline: none;
     }
   }
 
   &__btn {
     --btn-margin: 15px;
 
-    color: var(--color-primary);
+    color: var(--color-accent-1);
     border: 1.2px solid currentColor;
     border-radius: 100px;
-    font-size: 13px;
+    font-size: 11px;
 
     cursor: pointer;
+
+    @include breakpoint(xl) {
+      font-size: 10px;
+    }
 
     &.disabled {
       display: none;
@@ -48,19 +64,28 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus-within {
       outline: none;
-      background: var(--color-primary);
+      background: var(--color-accent-1);
       color: var(--color-text-light);
     }
 
     &-link {
       display: inline-block;
-      padding: 15px 20px;
+      padding: 15px 25px;
       height: 100%;
       font-weight: bold;
       letter-spacing: 2px;
       text-transform: uppercase;
+      white-space: nowrap;
+
+      &:focus {
+        outline: none;
+      }
+
+      @include breakpoint(sm) {
+        padding: 15px;
+      }
     }
   }
 }

@@ -82,14 +82,14 @@ function AboutPage() {
         <ImageWrapper className="story-main__panel panel-4">
           <img
             src={mainImg2}
-            alt="Male model wearing sunglasses"
+            alt="Female model wearing eyeglasses"
             className="story-main__img"
           />
         </ImageWrapper>
         <ImageWrapper className="story-main__panel panel-5">
           <img
             src={mainImg3}
-            alt="Female model wearing eyeglasses"
+            alt="Male model wearing sunglasses"
             className="story-main__img"
           />
         </ImageWrapper>

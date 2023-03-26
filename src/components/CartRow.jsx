@@ -25,7 +25,7 @@ function CartRow(props) {
         cartItem.itemId === product.id
           ? {
               ...cartItem,
-              quantity: cartItem.quantity + 1,
+              quantity: +cartItem.quantity + 1,
             }
           : cartItem,
       ),
@@ -33,14 +33,14 @@ function CartRow(props) {
   };
 
   const decrementQuantity = () => {
-    if (desiredQuantity <= 2) return;
+    if (desiredQuantity <= 1) return;
 
     setCart(() =>
       cart.map((cartItem) =>
         cartItem.itemId === product.id
           ? {
               ...cartItem,
-              quantity: cartItem.quantity - 1,
+              quantity: +cartItem.quantity - 1,
             }
           : cartItem,
       ),
@@ -53,7 +53,7 @@ function CartRow(props) {
         cartItem.itemId === product.id
           ? {
               ...cartItem,
-              quantity: e.target.value,
+              quantity: +e.target.value,
             }
           : cartItem,
       ),
@@ -101,6 +101,7 @@ function CartRow(props) {
             max={product.quantity}
             value={desiredQuantity}
             onChange={handleDesiredQty}
+            required
           />
 
           <button

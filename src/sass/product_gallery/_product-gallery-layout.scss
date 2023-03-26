@@ -4,6 +4,10 @@
   position: relative;
   margin-inline: 60px;
 
+  @include breakpoint(xl) {
+    margin-inline: 40px;
+  }
+
   &--wrapper {
     @include center-self(horizontal);
     width: var(--page-width);
@@ -11,12 +15,25 @@
     margin-bottom: 150px;
     display: grid;
     grid-template-columns: auto 1fr;
+
+    @include breakpoint(xl) {
+      display: block;
+      width: 100%;
+    }
   }
 
   &-sorter {
     display: flex;
     justify-content: flex-end;
     margin-right: 20px;
+
+    @include breakpoint(xl) {
+      margin-right: 0;
+    }
+
+    @include breakpoint(sm) {
+      justify-content: center;
+    }
 
     &__label {
       display: block;
@@ -50,6 +67,15 @@
     display: grid;
     grid-template-columns: repeat(2, 50%);
     margin-top: 30px;
+
+    @include breakpoint(md) {
+      grid-template-columns: 1fr;
+    }
+
+    @include breakpoint(xl, min) {
+      grid-template-columns: repeat(3, 33%);
+      column-gap: 10px;
+    }
   }
 
   &__no-results {

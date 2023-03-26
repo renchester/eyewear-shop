@@ -4,7 +4,6 @@
   @include center-self(horizontal);
   @extend %parent-with-centered-children;
   overflow: hidden;
-  width: var(--page-width);
 
   &:focus,
   &:active {
@@ -41,6 +40,8 @@
   }
 
   &-item__dynamic-content {
+    @include center-self(horizontal);
+    width: var(--page-width);
     position: absolute;
     bottom: 0;
     display: flex;
@@ -48,8 +49,12 @@
     align-items: flex-end;
     padding-inline: 50px;
     margin-bottom: 50px;
-    width: 100%;
     color: var(--color-text-light);
+
+    @include breakpoint(lg) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &-item__text-wrapper {
@@ -57,6 +62,12 @@
     display: flex;
     padding: 15px;
     flex-direction: column;
+
+    @include breakpoint(lg) {
+      width: 100%;
+      padding-inline: 0;
+      padding-block: 25px;
+    }
   }
 
   &-item__title {
@@ -68,7 +79,7 @@
   }
 
   &-item__details {
-    font-family: var(--font-gotham-book);
+    font-family: var(--font-raleway);
     font-size: var(--text-xs);
     font-weight: lighter;
     letter-spacing: 0.9px;
@@ -91,6 +102,10 @@
       text-align: center;
       text-decoration: none;
       letter-spacing: 2px;
+    }
+
+    @include breakpoint(lg) {
+      padding: 12.5px;
     }
   }
 

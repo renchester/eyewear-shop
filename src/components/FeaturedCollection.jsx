@@ -20,7 +20,7 @@ function FeaturedCollection() {
             FIND OUT NOW
           </Link>
         </div>
-        <ImageWrapper>
+        <ImageWrapper className="featured-coll__img-wrapper">
           <img
             src={img2}
             alt="Sample of a model"
@@ -29,7 +29,7 @@ function FeaturedCollection() {
         </ImageWrapper>
       </div>
       <div className="featured-coll__col-2">
-        <ImageWrapper>
+        <ImageWrapper className="featured-coll__img-wrapper">
           <img
             src={img1}
             alt="Sample of an ad in the featured collection"

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Flickity from 'react-flickity-component';
 
+// eslint-disable-next-line no-unused-vars
 import flickityFade from 'flickity-fade';
 import { nanoid } from 'nanoid';
 

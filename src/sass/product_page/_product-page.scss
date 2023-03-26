@@ -9,6 +9,22 @@
   padding-inline: 40px;
   gap: 35px;
 
+  @include breakpoint(xl) {
+    gap: 15px;
+  }
+
+  @include breakpoint(md) {
+    flex-direction: column;
+  }
+
+  @include breakpoint(lg) {
+    padding-inline: 20px;
+  }
+
+  @include breakpoint(sm) {
+    padding-inline: 10px;
+  }
+
   &__nav {
     display: flex;
     gap: 10px;
@@ -22,6 +38,10 @@
       text-underline-offset: 2px;
       letter-spacing: 0.5px;
     }
+
+    @include breakpoint(lg) {
+      font-size: 10.5px;
+    }
   }
 
   &__img--container {
@@ -31,29 +51,58 @@
     max-width: 800px;
   }
 
+  &__img--wrapper {
+    @include breakpoint(md) {
+      display: flex;
+    }
+  }
+
   &__active-img {
     object-position: center;
     object-fit: cover;
     height: 500px;
     width: max(100%, 200px);
     margin-block: 50px;
+
+    @include breakpoint(lg) {
+      max-width: 460px;
+      height: 100%;
+    }
+
+    @include breakpoint(md) {
+      margin: 0 auto;
+      display: block;
+    }
   }
 
   &__img-thumbs {
     display: flex;
     justify-content: center;
     gap: 20px;
+
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
   }
 
   &__img-thumbnail {
     width: 80px;
+    background: white;
 
     &--wrapper {
       border: 1px solid gray;
     }
 
     &--wrapper.active {
-      border: 2px solid var(--color-primary);
+      border: 2px solid var(--color-accent-1);
+    }
+
+    @include breakpoint(lg) {
+      width: 65px;
+    }
+
+    @include breakpoint(sm) {
+      width: 50px;
     }
   }
 
@@ -61,13 +110,19 @@
     margin-top: 45px;
     padding: 20px;
     width: 450px;
+
+    @include breakpoint(md) {
+      @include center-self(horizontal);
+      margin-top: 0;
+      width: 90%;
+    }
   }
 
   &__title {
     font-size: var(--text-lg);
     font-family: var(--font-gotham);
     text-transform: uppercase;
-    color: var(--color-primary);
+    color: var(--color-accent-1);
   }
 
   &__price--wrapper {
@@ -88,7 +143,6 @@
 
   &__details {
     margin-top: 30px;
-    line-height: 1.65em;
     font-family: var(--font-raleway);
     font-size: 14.25px;
   }
@@ -96,6 +150,7 @@
   &__description,
   &__tech-detail {
     letter-spacing: 0.75px;
+    line-height: 1.65em;
   }
 
   &__tech-details {
@@ -145,7 +200,7 @@
     padding: 10px;
     border: 1px solid var(--color-grey-light-3);
     font-size: var(--text-sm);
-    font-family: var(--font-gotham-book);
+    font-family: var(--font-gotham);
 
     &:focus {
       outline: 1px solid black;
@@ -177,19 +232,19 @@
     &:hover,
     &:focus {
       color: var(--color-text-light);
-      background: var(--color-primary);
+      background: var(--color-accent-1);
       outline: none;
     }
   }
 
   &__btn-add-cart {
     font-size: var(--text-xs);
-    color: var(--color-primary);
+    color: var(--color-accent-1);
     margin-top: 50px;
   }
 
   &__btn-checkout {
-    --color-primary: rgb(173, 142, 100);
+    --color-accent-1: rgb(173, 142, 100);
     font-size: var(--text-xs);
     margin-top: 20px;
     display: block;
@@ -220,6 +275,10 @@
     font-weight: bold;
     letter-spacing: 1px;
     text-align: center;
+
+    @include breakpoint(sm) {
+      font-size: var(--text-sm);
+    }
   }
 
   &__steps {
@@ -228,6 +287,11 @@
     align-items: flex-start;
     margin-top: 40px;
     padding-inline: 30px;
+
+    @include breakpoint(lg) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__step {
@@ -236,10 +300,20 @@
     justify-content: flex-start;
     gap: 20px;
     width: clamp(200px, 35%, 370px);
+
+    @include breakpoint(lg) {
+      gap: 30px;
+      flex-direction: row;
+      width: min(100%, 500px);
+    }
   }
 
   &__count {
     font-size: var(--text-lg);
+
+    @include breakpoint(lg) {
+      margin-right: 10px;
+    }
   }
 
   &__instruction {
@@ -248,5 +322,9 @@
     text-align: center;
     line-height: 1.5em;
     letter-spacing: 0.9px;
+
+    @include breakpoint(lg) {
+      text-align: left;
+    }
   }
 }

@@ -30,7 +30,7 @@
       text-underline-offset: 5px;
     }
 
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
       font-size: 12px;
     }
   }
@@ -45,13 +45,13 @@
     color: var(--color-text-light);
 
     & .nav__links {
-      @include breakpoint(md) {
+      @include breakpoint(lg) {
         display: none;
       }
     }
 
     & .nav__logo-img {
-      @include breakpoint(md) {
+      @include breakpoint(lg) {
         @include center-self(both, absolute);
         margin-left: 0;
       }
@@ -108,7 +108,7 @@
     font-size: var(--text-xxl);
     cursor: pointer;
 
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
       display: block;
     }
   }
