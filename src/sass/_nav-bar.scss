@@ -1,0 +1,76 @@
+@import 'mixins';
+
+.nav {
+  @extend %parent-with-centered-children;
+  width: 100%;
+  background-color: rgb(34, 34, 34);
+  padding-block: 18px;
+  color: var(--color-text-light);
+
+  &__links {
+    @extend %parent-with-centered-children;
+    gap: 50px;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14.5px;
+    font-family: var(--font-courier-code);
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+  }
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    background: black;
+    padding-block: 35px;
+    z-index: 2;
+
+    color: var(--color-text-light);
+  }
+
+  &__logo {
+    width: fit-content;
+  }
+
+  &__logo-img {
+    @include center-self(vertical, absolute);
+    left: 0;
+    margin-left: 20px;
+    min-width: 75px;
+    max-width: 150px;
+    aspect-ratio: 5 / 2;
+  }
+
+  &__icons-wrapper {
+    @include center-self(vertical, absolute);
+    @extend %icon-wrapper;
+  }
+
+  &__btn-icon {
+    @extend %btn-icon;
+
+    &:hover .cart-badge {
+      @extend %cart-badge--hover;
+    }
+
+    & .cart-badge {
+      @extend %parent-with-centered-children;
+      @extend %cart-badge;
+      background: white;
+      color: var(--color-text);
+      font-weight: bold;
+      height: 20px;
+    }
+  }
+
+  &__search-svg {
+    @extend %search-svg;
+  }
+}

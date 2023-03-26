@@ -2,14 +2,14 @@
 .header {
   @extend %parent-with-centered-children;
   flex-direction: column;
-  color: var(--color-text-light);
+  color: var(--color-dark-2);
 
   &__main {
     @extend %parent-with-centered-children;
     position: relative;
     width: 100%;
     background-color: var(--color-primary);
-    padding-block: 30px 22px;
+    padding-block: 15px;
 
     &--extra-message {
       display: none;
@@ -27,77 +27,35 @@
     @extend %parent-with-centered-children;
     flex-direction: column;
     gap: 5px;
-    cursor: pointer;
+    text-align: center;
     text-decoration: none;
+    cursor: pointer;
 
-    &-main {
-      font-family: var(--font-gotham-bold);
-      font-size: var(--text-xxl);
-      letter-spacing: 7.5px;
-    }
-
-    &-sub {
-      font-family: var(--font-gotham-light);
-      font-size: var(--text-sm);
-      letter-spacing: 10px;
+    &-img {
+      width: clamp(100px, 47.5%, 700px);
+      aspect-ratio: 5 / 2;
     }
   }
 
   &__icons-wrapper {
-    position: absolute;
-    right: 0;
-    margin-right: 20px;
-
-    display: flex;
-    gap: 20px;
+    @include center-self(vertical, absolute);
+    @extend %icon-wrapper;
   }
 
   &__btn-icon {
-    font-size: 1.75rem;
-    background: transparent;
-    cursor: pointer;
-    position: relative;
+    @extend %btn-icon;
 
     &:hover .cart-badge {
-      transform: scale(1.1);
+      @extend %cart-badge--hover;
     }
 
     & .cart-badge {
-      position: absolute;
-      right: -10px;
-      background: var(--color-grey-dark-1);
-      height: 22px;
-      border-radius: 10px;
-      padding: 5px;
-      font-family: var(--font-courier);
-      font-size: 15px;
-      letter-spacing: -1px;
+      @extend %parent-with-centered-children;
+      @extend %cart-badge;
     }
   }
 
   &__search-svg {
-    display: block;
-    width: 30px;
-    height: 30px;
-  }
-}
-
-.nav {
-  @extend %parent-with-centered-children;
-  width: 100%;
-  background-color: rgb(34, 34, 34);
-  padding-block: 14px;
-
-  &__links {
-    @extend %parent-with-centered-children;
-    gap: 50px;
-  }
-
-  &__link {
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
-    font-size: var(--text-xs);
-    font-family: var(--font-courier);
+    @extend %search-svg;
   }
 }

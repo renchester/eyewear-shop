@@ -1,13 +1,23 @@
 import { useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 
 import CartContext from '../context/CartContext';
 import SearchPanel from './SearchPanel';
+import NavBar from './NavBar';
+import NavBarSticky from './NavBarSticky';
+
+import ImageWrapper from './ImageWrapper';
+import logo from '../assets/img/logo-black.png';
 
 function Header() {
   const [cartItems] = useContext(CartContext);
 
   const [searchInView, setSearchInView] = useState(false);
+
+  const [ref, inView] = useInView({
+    threshold: 0,
+  });
 
   const toggleSearchView = () => {
     setSearchInView(() => !searchInView);
@@ -15,14 +25,15 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="header__main">
+      <div className="header__main" ref={ref}>
         <div className="header__main--extra-message">
           Free shipping on orders above 10000
         </div>
 
         <Link to="/" className="header__logo">
-          <h1 className="header__logo-main">SAVANT</h1>
-          <h2 className="header__logo-sub">EYEWEAR</h2>
+          <ImageWrapper className="header__logo-img-wrapper">
+            <img src={logo} alt="Savant logo" className="header__logo-img" />
+          </ImageWrapper>
         </Link>
         <div className="header__icons-wrapper">
           <button
@@ -53,39 +64,11 @@ function Header() {
         </div>
       </div>
 
-      <nav className="nav">
-        <ul className="nav__links">
-          <NavLink
-            to="/products"
-            className="nav__link
-          "
-          >
-            Collection
-          </NavLink>
-          <NavLink
-            to="/products/eyeglasses"
-            className="nav__link
-          "
-          >
-            Eyeglasses
-          </NavLink>
-          <NavLink
-            to="/products/sunglasses"
-            className="nav__link
-          "
-          >
-            Sunglasses
-          </NavLink>
-
-          <NavLink
-            to="/about"
-            className="nav__link
-          "
-          >
-            About us
-          </NavLink>
-        </ul>
-      </nav>
+      {inView ? (
+        <NavBar />
+      ) : (
+        <NavBarSticky toggleSearchView={toggleSearchView} />
+      )}
 
       {searchInView && (
         <>
