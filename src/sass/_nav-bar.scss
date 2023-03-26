@@ -10,6 +10,12 @@
   &__links {
     @extend %parent-with-centered-children;
     gap: 50px;
+
+    @include breakpoint(sm) {
+      padding-inline: 30px;
+      justify-content: space-between;
+      gap: 20px;
+    }
   }
 
   &__link {
@@ -23,6 +29,10 @@
       text-decoration: underline;
       text-underline-offset: 5px;
     }
+
+    @include breakpoint(md) {
+      font-size: 12px;
+    }
   }
 
   &--sticky {
@@ -33,6 +43,19 @@
     z-index: 2;
 
     color: var(--color-text-light);
+
+    & .nav__links {
+      @include breakpoint(md) {
+        display: none;
+      }
+    }
+
+    & .nav__logo-img {
+      @include breakpoint(md) {
+        @include center-self(both, absolute);
+        margin-left: 0;
+      }
+    }
   }
 
   &__logo {
@@ -41,6 +64,7 @@
 
   &__logo-img {
     @include center-self(vertical, absolute);
+    object-fit: cover;
     left: 0;
     margin-left: 20px;
     min-width: 75px;
@@ -59,18 +83,82 @@
     &:hover .cart-badge {
       @extend %cart-badge--hover;
     }
+  }
 
-    & .cart-badge {
-      @extend %parent-with-centered-children;
-      @extend %cart-badge;
-      background: white;
-      color: var(--color-text);
-      font-weight: bold;
-      height: 20px;
-    }
+  .cart-badge {
+    @extend %parent-with-centered-children;
+    @extend %cart-badge;
+    background: white;
+    color: var(--color-text);
+    font-weight: bold;
+    height: 18px;
   }
 
   &__search-svg {
     @extend %search-svg;
+  }
+
+  &__btn-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    background: transparent;
+    margin-left: 12px;
+
+    font-size: var(--text-xxl);
+    cursor: pointer;
+
+    @include breakpoint(md) {
+      display: block;
+    }
+  }
+}
+
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: var(--color-dark-2);
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  &__link {
+    margin-inline: 14px;
+    padding-block: 20px;
+    padding-left: 12px;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.2);
+    font-size: var(--text-xs);
+    font-family: var(--font-courier-code);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      color: var(--color-primary);
+      outline: none;
+    }
+  }
+
+  &__btn-collapse {
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    padding: 20px;
+    transform: rotate(90deg);
+    height: fit-content;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      scale: 1.5;
+      color: var(--color-primary);
+    }
   }
 }

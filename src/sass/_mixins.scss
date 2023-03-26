@@ -23,9 +23,10 @@
 /* MEDIA QUERY MIXIN*/
 
 $breakpoints: (
-  sm: 30em,
-  md: 50em,
-  lg: 75em,
+  xs: 320px,
+  sm: 600px,
+  md: 900px,
+  lg: 1200px,
 );
 
 @mixin breakpoint($key, $minmax: max) {
@@ -116,6 +117,10 @@ $breakpoints: (
   cursor: pointer;
   position: relative;
   text-decoration: none;
+
+  @include breakpoint(sm) {
+    font-size: 1.65rem;
+  }
 }
 
 %cart-badge--hover {
@@ -137,9 +142,18 @@ $breakpoints: (
   color: var(--color-text-light);
   font-size: 12px;
   letter-spacing: -1px;
+
+  @include breakpoint(sm) {
+    height: 18px;
+    font-size: 10px;
+  }
 }
 
 %search-svg {
   display: block;
   width: 27.5px;
+
+  @include breakpoint(sm) {
+    display: none;
+  }
 }

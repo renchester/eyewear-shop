@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-
-import ImageWrapper from './ImageWrapper';
 
 import CartContext from '../context/CartContext';
 import logo from '../assets/img/logo-white.png';
@@ -10,14 +8,29 @@ import logo from '../assets/img/logo-white.png';
 function NavBarSticky(props) {
   const { toggleSearchView } = props;
 
+  const [menuVisible, setMenuVisibility] = useState(false);
   const [cartItems] = useContext(CartContext);
+
+  const toggleMenuVisibility = () => {
+    setMenuVisibility(() => !menuVisible);
+  };
+
+  const hideMenu = () => {
+    setMenuVisibility(false);
+  };
 
   return (
     <nav className="nav nav--sticky">
+      <button
+        type="button"
+        className="material-symbols-outlined nav__btn-menu"
+        onClick={toggleMenuVisibility}
+      >
+        menu
+      </button>
+
       <Link to="/" className="nav__logo">
-        <ImageWrapper>
-          <img src={logo} alt="Savant logo" className="nav__logo-img" />
-        </ImageWrapper>
+        <img src={logo} alt="Savant logo" className="nav__logo-img" />
       </Link>
       <ul className="nav__links">
         <NavLink
@@ -73,6 +86,50 @@ function NavBarSticky(props) {
           )}
         </Link>
       </div>
+
+      {menuVisible && (
+        <nav className="nav-menu">
+          <ul className="nav-menu__links">
+            <NavLink
+              to="/products"
+              className="nav-menu__link
+          "
+            >
+              Collection
+            </NavLink>
+            <NavLink
+              to="/products/eyeglasses"
+              className="nav-menu__link
+          "
+            >
+              Eyeglasses
+            </NavLink>
+            <NavLink
+              to="/products/sunglasses"
+              className="nav-menu__link
+          "
+            >
+              Sunglasses
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              className="nav-menu__link
+          "
+            >
+              About us
+            </NavLink>
+          </ul>
+
+          <button
+            type="button"
+            className="material-symbols-outlined nav-menu__btn-collapse"
+            onClick={hideMenu}
+          >
+            arrow_back_ios_new
+          </button>
+        </nav>
+      )}
     </nav>
   );
 }
