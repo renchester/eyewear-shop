@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useContext, useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import CartContext from '../context/CartContext';
 import logo from '../assets/img/logo-white.png';
@@ -38,7 +39,12 @@ function NavBarSticky(props) {
   }, []);
 
   return (
-    <nav className="nav nav--sticky">
+    <motion.nav
+      className="nav nav--sticky"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ type: 'tween' }}
+    >
       <button
         type="button"
         className="material-symbols-outlined nav__btn-menu"
@@ -104,51 +110,58 @@ function NavBarSticky(props) {
           )}
         </Link>
       </div>
-
-      {menuVisible && (
-        <nav className="nav-menu">
-          <ul className="nav-menu__links">
-            <NavLink
-              to="/products"
-              className="nav-menu__link
-          "
-            >
-              Collection
-            </NavLink>
-            <NavLink
-              to="/products/eyeglasses"
-              className="nav-menu__link
-          "
-            >
-              Eyeglasses
-            </NavLink>
-            <NavLink
-              to="/products/sunglasses"
-              className="nav-menu__link
-          "
-            >
-              Sunglasses
-            </NavLink>
-
-            <NavLink
-              to="/about"
-              className="nav-menu__link
-          "
-            >
-              About us
-            </NavLink>
-          </ul>
-
-          <button
-            type="button"
-            className="material-symbols-outlined nav-menu__btn-collapse"
-            onClick={hideMenu}
+      <AnimatePresence>
+        {menuVisible && (
+          <motion.nav
+            className="nav-menu"
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1, originY: 0 }}
+            exit={{ scaleY: 0 }}
+            transition={{ type: 'tween' }}
           >
-            arrow_back_ios_new
-          </button>
-        </nav>
-      )}
-    </nav>
+            <ul className="nav-menu__links">
+              <NavLink
+                to="/products"
+                className="nav-menu__link
+            "
+              >
+                Collection
+              </NavLink>
+              <NavLink
+                to="/products/eyeglasses"
+                className="nav-menu__link
+            "
+              >
+                Eyeglasses
+              </NavLink>
+              <NavLink
+                to="/products/sunglasses"
+                className="nav-menu__link
+            "
+              >
+                Sunglasses
+              </NavLink>
+
+              <NavLink
+                to="/about"
+                className="nav-menu__link
+            "
+              >
+                About us
+              </NavLink>
+            </ul>
+
+            <button
+              type="button"
+              className="material-symbols-outlined nav-menu__btn-collapse"
+              onClick={hideMenu}
+            >
+              arrow_back_ios_new
+            </button>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 }
 

@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import CartContext from '../context/CartContext';
 import SearchPanel from './SearchPanel';
@@ -70,12 +71,19 @@ function Header() {
         <NavBarSticky toggleSearchView={toggleSearchView} />
       )}
 
-      {searchInView && (
-        <>
-          <div className="search__overlay" />
-          <SearchPanel toggleSearchView={toggleSearchView} />
-        </>
-      )}
+      <AnimatePresence>
+        {searchInView && (
+          <>
+            <motion.div
+              className="search__overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            />
+            <SearchPanel toggleSearchView={toggleSearchView} />
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

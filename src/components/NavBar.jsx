@@ -1,8 +1,14 @@
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function NavBar() {
   return (
-    <nav className="nav">
+    <motion.nav
+      className="nav"
+      initial={{ y: -10 }}
+      animate={{ y: 0 }}
+      transition={{ type: 'tween' }}
+    >
       <ul className="nav__links">
         <NavLink
           to="/products"
@@ -34,7 +40,7 @@ function NavBar() {
           About us
         </NavLink>
       </ul>
-    </nav>
+    </motion.nav>
   );
 }
 

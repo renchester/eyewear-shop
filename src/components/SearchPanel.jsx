@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { DebounceInput } from 'react-debounce-input';
 import { nanoid } from 'nanoid';
+import { motion } from 'framer-motion';
 
 import { allProductsData } from '../data/productData';
 import searchForMatch from '../utils/searchForMatch';
@@ -22,7 +23,13 @@ function SearchPanel(props) {
   }, [query]);
 
   return (
-    <div className="search">
+    <motion.div
+      className="search"
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 100, opacity: 0 }}
+      transition={{ type: 'tween', duration: 0.3 }}
+    >
       <button
         type="button"
         className="search__btn-close material-symbols-outlined"
@@ -46,7 +53,6 @@ function SearchPanel(props) {
           onChange={searchForProduct}
           spellCheck={false}
         />
-
         <button type="submit" className="search__btn-submit">
           GO
         </button>
@@ -75,7 +81,6 @@ function SearchPanel(props) {
               </div>
             </Link>
           ))}
-
         {query && searchResults.length === 0 && (
           <div
             className="search__no-results
@@ -85,7 +90,7 @@ function SearchPanel(props) {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -93,47 +98,3 @@ SearchPanel.propTypes = {
   toggleSearchView: PropTypes.func.isRequired,
 };
 export default SearchPanel;
-
-/*
- {
-   searchResults.length > 0 ? (
-     searchResults.map((res) => (
-       <div className="search-result" key={nanoid()}>
-         <img
-           src={res.images.main}
-           alt={`${res.title} front view`}
-           width={50}
-         />
-         <div className="search-result__details">
-           <span className="search-result__title">{res.title}</span>
-           <span className="search-result__price">{res.price}</span>
-         </div>
-       </div>
-     ))
-   ) : (
-     <div>No search results</div>
-   );
- }
-
- */
-
-/*
-
- {query &&
-          searchResults.length > 0 &&
-          searchResults.map((res) => (
-            <div className="search-result" key={nanoid()}>
-              <img
-                src={res.images.main}
-                alt={`${res.title} front view`}
-                width={50}
-              />
-              <div className="search-result__details">
-                <span className="search-result__title">{res.title}</span>
-                <span className="search-result__price">{res.price}</span>
-              </div>
-            </div>
-          ))}
-
-
-          */

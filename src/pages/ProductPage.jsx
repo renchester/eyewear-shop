@@ -1,5 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
 import CartContext from '../context/CartContext';
 
 import ImageWrapper from '../components/ImageWrapper';
@@ -231,12 +233,18 @@ function ProductPage() {
                   Add to Cart
                 </button>
                 {itemIsInCart && (
-                  <Link
-                    to="/cart"
-                    className="pd-pg__btn-cart pd-pg__btn-checkout"
+                  <motion.div
+                    initial={{ scaleY: 0, opacity: 0 }}
+                    animate={{ scaleY: 1, originY: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
                   >
-                    Buy it now
-                  </Link>
+                    <Link
+                      to="/cart"
+                      className="pd-pg__btn-cart pd-pg__btn-checkout"
+                    >
+                      Buy it now
+                    </Link>
+                  </motion.div>
                 )}
                 {errorMessage && (
                   <span className="pd-pg__error">{errorMessage}</span>
