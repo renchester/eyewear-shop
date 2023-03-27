@@ -10,7 +10,7 @@ const blogData = [
     category: 'locations',
     title: "We're coming to Singapore",
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, qui delectus? Sed sequi magni voluptatum veniam, doloremque',
+      "We are opening a new location in Singapore! Our unique collection of glasses and sunglasses is coming to the heart of the city, and we can't wait for you to come and explore our latest designs.",
     img: img1,
   },
   {
@@ -18,7 +18,7 @@ const blogData = [
     category: 'community',
     title: 'Meet our Savant Family',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, qui delectus? Sed sequi magni voluptatum veniam, doloremque',
+      'At our brand, we place a great emphasis on the value of community and family. From our dedicated team members to our loyal customers, we see everyone as a part of the larger family that makes our brand what it is today.',
     img: img2,
   },
   {
@@ -26,7 +26,7 @@ const blogData = [
     category: '#SAVANTmoments',
     title: 'Eye Spy',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, qui delectus? Sed sequi magni voluptatum veniam, doloremque',
+      'Our brand has been spotted on some of the biggest names in Hollywood! From red carpet events to casual outings, these stars have been rocking our frames and proving that our designs are truly timeless.',
     img: img3,
   },
 ];

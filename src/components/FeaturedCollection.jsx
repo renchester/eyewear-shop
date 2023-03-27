@@ -10,14 +10,15 @@ function FeaturedCollection() {
     <section className="featured-coll">
       <div className="featured-coll__col-1">
         <div className="featured-coll__text-wrapper">
-          <h4 className="featured-coll__title">Collection</h4>
+          <h4 className="featured-coll__title">Amora</h4>
           <p className="featured-coll__details">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam,
-            voluptates neque commodi optio, minima incidunt, consequatur a quia
-            repudiandae nostrum perferendis.
+            Crafted with care, each pair of Amora glasses is a unique statement
+            piece that combines contemporary design with classic elegance. The
+            collection features a range of frames in various colors and styles,
+            all made from high-quality materials that are built to last.
           </p>
           <Link to="/products" className="featured-coll__link">
-            FIND OUT NOW
+            BROWSE AMORA
           </Link>
         </div>
         <ImageWrapper className="featured-coll__img-wrapper">

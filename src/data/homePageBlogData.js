@@ -10,7 +10,7 @@ const blogData = [
     category: 'feel good',
     title: 'Gallery of dogs wearing glasses',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, qui delectus? Sed sequi magni voluptatum veniam, doloremque',
+      "From classic aviators to colorful frames, dogs of all breeds and sizes are embracing this fun and playful trend, making a bold fashion statement that's impossible to ignore.",
     img: img1,
   },
   {
@@ -18,7 +18,7 @@ const blogData = [
     category: 'proper eyecare',
     title: 'How to take care of your eyes as a teenager',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, qui delectus? Sed sequi magni voluptatum veniam, doloremque',
+      'From getting enough sleep to eating a balanced diet, our experts weigh in on a range of healthy habits that can help prevent eye strain, maintain healthy vision, and reduce the risk of long-term eye problems.',
     img: img2,
   },
   {
@@ -26,7 +26,7 @@ const blogData = [
     category: 'legacy',
     title: 'The eye doctor who traveled across Asia',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, qui delectus? Sed sequi magni voluptatum veniam, doloremque',
+      "The story of one eye doctor's journey to remote villages across Asia to provide much-needed eye care to young children. ",
     img: img3,
   },
 ];
