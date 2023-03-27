@@ -11,6 +11,10 @@
   background: white;
   color: black;
 
+  @include breakpoint(lg) {
+    width: 80%;
+  }
+
   &__overlay {
     position: fixed;
     z-index: 9;
