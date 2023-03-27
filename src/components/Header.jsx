@@ -24,6 +24,10 @@ function Header() {
     setSearchInView(() => !searchInView);
   };
 
+  const hideSearchView = () => {
+    setSearchInView(false);
+  };
+
   return (
     <header className="header">
       <div className="header__main" ref={ref}>
@@ -79,6 +83,7 @@ function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              onClick={hideSearchView}
             />
             <SearchPanel toggleSearchView={toggleSearchView} />
           </>
