@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  ScrollRestoration,
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import CartProvider from './context/CartProvider';
 
