@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import CartContext from '../context/CartContext';
 
 import ImageWrapper from '../components/ImageWrapper';
+import ScrollToTop from '../components/ScrollToTop';
 
 import { allProductsData } from '../data/productData';
 
@@ -286,6 +287,7 @@ function ProductPage() {
             </p>
           </li>
         </ul>
+        <ScrollToTop />
       </section>
     </>
   );

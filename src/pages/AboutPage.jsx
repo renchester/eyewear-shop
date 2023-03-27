@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import ImageWrapper from '../components/ImageWrapper';
 import BlogContent from '../components/BlogContent';
+import ScrollToTop from '../components/ScrollToTop';
 
 import blogData from '../data/aboutPageBlogData';
 
@@ -144,6 +145,7 @@ function AboutPage() {
       />
 
       <section className="story-visit">Visit us</section>
+      <ScrollToTop />
     </main>
   );
 }

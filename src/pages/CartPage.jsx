@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 
 import CartContext from '../context/CartContext';
+import CartRow from '../components/CartRow';
+import ScrollToTop from '../components/ScrollToTop';
 
 import { allProductsData } from '../data/productData';
-import CartRow from '../components/CartRow';
 import getTotalPrice from '../utils/getTotalPrice';
 import formatPrice from '../utils/formatPrice';
 
@@ -103,6 +104,7 @@ function CartPage() {
           </Link>
         </div>
       )}
+      <ScrollToTop />
     </main>
   );
 }

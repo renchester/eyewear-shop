@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import ProductBanner from '../components/ProductBanner';
 import ProductSidebar from '../components/ProductSidebar';
+import ScrollToTop from '../components/ScrollToTop';
 
 function ProductGalleryLayout() {
   const [bannerContent, setBannerContent] = useState({
@@ -49,6 +50,7 @@ function ProductGalleryLayout() {
             <Outlet context={{ setBannerContent, productSort }} />
           </section>
         </main>
+        <ScrollToTop />
       </div>
     </div>
   );
