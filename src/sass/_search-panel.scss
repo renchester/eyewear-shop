@@ -30,23 +30,22 @@
 
     background: transparent;
     padding: 10px;
-    text-align: center;
     font-weight: bold;
     cursor: pointer;
 
     &:focus,
     &:hover {
       transform: scale(1.2);
-      color: var(--color-primary);
-      outline: 1px solid currentColor;
+      background: var(--color-grey-light-1);
+      outline: none;
     }
   }
 
   &__title {
     margin-block: 30px;
     font-size: var(--text-lg);
-    font-family: var(--font-roboto);
-    letter-spacing: 1px;
+    font-family: var(--font-gotham-book);
+    letter-spacing: 0.4px;
   }
 
   &-form {

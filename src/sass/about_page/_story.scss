@@ -187,6 +187,8 @@
 
       @include breakpoint(md) {
         padding-block: 50px;
+        text-align: center;
+        align-items: center;
       }
     }
 
