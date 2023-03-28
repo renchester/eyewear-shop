@@ -8,6 +8,7 @@ import CartProvider from './context/CartProvider';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import ProductGallery from './components/ProductGallery';
 import ProductGalleryLayout from './layout/ProductGalleryLayout';
 import ProductPageLayout from './layout/ProductPageLayout';
 
@@ -15,7 +16,6 @@ import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
 import CartPage from './pages/CartPage';
-import ProductGalleryPage from './pages/ProductGalleryPage';
 import UnderConstruction from './pages/UnderConstruction';
 
 import './sass/main.scss';
@@ -32,15 +32,15 @@ function RouteSwitch() {
             <Route
               index
               path="/products"
-              element={<ProductGalleryPage categoryType="allProducts" />}
+              element={<ProductGallery categoryType="allProducts" />}
             />
             <Route
               path="/products/eyeglasses"
-              element={<ProductGalleryPage categoryType="eyeglasses" />}
+              element={<ProductGallery categoryType="eyeglasses" />}
             />
             <Route
               path="/products/sunglasses"
-              element={<ProductGalleryPage categoryType="sunglasses" />}
+              element={<ProductGallery categoryType="sunglasses" />}
             />
           </Route>
           <Route element={<ProductPageLayout />}>

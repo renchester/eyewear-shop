@@ -1,10 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
 function ProductPageLayout() {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
+  return <Outlet />;
 }
 export default ProductPageLayout;

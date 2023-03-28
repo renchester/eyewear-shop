@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import ProgressiveImage from 'react-progressive-graceful-image';
 
 import CartContext from '../context/CartContext';
 

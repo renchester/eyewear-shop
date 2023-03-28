@@ -8,7 +8,12 @@
     margin-top: 5px;
 
     @extend %parent-with-centered-children;
+    flex-wrap: wrap;
     font-family: var(--font-gotham-book);
+
+    @include breakpoint(md) {
+      margin-top: 50px;
+    }
   }
 
   &__li {
@@ -51,16 +56,31 @@
       font-size: 10px;
     }
 
+    @include breakpoint(md) {
+      position: absolute;
+      margin-block: 5px;
+    }
+
     &.disabled {
       display: none;
     }
 
     &--prev {
       margin-right: var(--btn-margin);
+
+      @include breakpoint(md) {
+        margin-right: 0;
+        bottom: 100%;
+      }
     }
 
     &--next {
       margin-left: var(--btn-margin);
+
+      @include breakpoint(md) {
+        margin-left: 0;
+        top: 100%;
+      }
     }
 
     &:hover,
