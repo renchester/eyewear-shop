@@ -1,9 +1,23 @@
 import framesData from './json/framesProductData.json';
 import sunniesData from './json/sunniesProductData.json';
 
-function getImgUrl(fileName, type, isMain) {
+function getSubfolder(type, isCompressed) {
+  let subfolder;
+
+  if (type === 'sunnies') {
+    subfolder = isCompressed ? 'sunniesImages-compressed' : 'sunniesImages';
+  }
+
+  if (type === 'frames') {
+    subfolder = isCompressed ? 'framesImages-compressed' : 'framesImages';
+  }
+
+  return subfolder;
+}
+
+function getImgUrl(fileName, type, isMain, isCompressed = false) {
   const ext = 'jpg';
-  const subfolder = type === 'sunnies' ? 'sunniesImages' : 'framesImages';
+  const subfolder = getSubfolder(type, isCompressed);
   const number = isMain ? '1' : '2';
 
   const imgURL = new URL(
@@ -22,6 +36,10 @@ function mapImage(item) {
     images: {
       main: getImgUrl(fileName, item.type, true),
       side: getImgUrl(fileName, item.type, false),
+    },
+    compressedImages: {
+      main: getImgUrl(fileName, item.type, true, true),
+      side: getImgUrl(fileName, item.type, false, true),
     },
   };
 }
