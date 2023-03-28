@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams, useOutletContext } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 
 import ReactPaginate from 'react-paginate';
 import PropTypes from 'prop-types';
 
-import ProductCard from '../components/ProductCard';
+import ProductCard from './ProductCard';
 
 import {
   allProductsCategoryData,
@@ -14,13 +14,11 @@ import {
 } from '../data/productCategoryData';
 import sortProducts from '../utils/sortProducts';
 
-function ProductGalleryPage({ categoryType }) {
+function ProductGallery({ categoryType }) {
   const [categoryData, setCategoryData] = useState(allProductsCategoryData);
-  const { productSort, setBannerContent } = useOutletContext();
+  const { productSort, productsRef, setBannerContent, currentPage, setSearch } =
+    useOutletContext();
   const sortedProductsData = sortProducts(categoryData.products, productSort);
-
-  const [search, setSearch] = useSearchParams();
-  const currentPage = search.get('page') || 1;
 
   const ITEMS_PER_PAGE = 12;
   const start = (+currentPage - 1) * ITEMS_PER_PAGE;
@@ -56,6 +54,10 @@ function ProductGalleryPage({ categoryType }) {
     setBannerContent(() => categoryData.banner);
   }, [categoryData, setBannerContent]);
 
+  useEffect(() => {
+    productsRef.current.scrollIntoView();
+  }, [productsRef, currentPage]);
+
   const handlePageClick = (e) => {
     setSearch({ page: +e.selected + 1 });
   };
@@ -82,7 +84,7 @@ function ProductGalleryPage({ categoryType }) {
           pageCount={pageCount}
           previousLabel="< prev"
           renderOnZeroPageCount={null}
-          initialPage={currentPage - 1}
+          forcePage={currentPage - 1}
           containerClassName="pgnt__container"
           pageClassName="pgnt__li"
           activeClassName="active"
@@ -100,8 +102,8 @@ function ProductGalleryPage({ categoryType }) {
   );
 }
 
-ProductGalleryPage.propTypes = {
+ProductGallery.propTypes = {
   categoryType: PropTypes.string.isRequired,
 };
 
-export default ProductGalleryPage;
+export default ProductGallery;

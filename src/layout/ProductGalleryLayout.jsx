@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useState, useRef, useEffect } from 'react';
+import { Outlet, useSearchParams } from 'react-router-dom';
 
 import ProductBanner from '../components/ProductBanner';
 import ProductSidebar from '../components/ProductSidebar';
@@ -10,20 +10,32 @@ function ProductGalleryLayout() {
     title: '',
     description: '',
     img: '',
+    imgCompressed: '',
+    imgAlt: '',
   });
-
   const [productSort, setProductSort] = useState('recommended');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const productsRef = useRef(null);
+
+  const [search, setSearch] = useSearchParams();
+  // const currentPage = search.get('page') || 1;
 
   const handleProductSort = (e) => {
     setProductSort(() => e.target.value);
+    setSearch(() => ({ page: 1 }));
   };
+
+  useEffect(() => {
+    setCurrentPage(() => search.get('page') || 1);
+  }, [search]);
 
   return (
     <div className="screen-product">
       <ProductBanner content={bannerContent} />
       <div className="products--wrapper">
         <ProductSidebar />
-        <main className="products">
+        <main className="products" ref={productsRef}>
           <div className="products-sorter">
             <label htmlFor="product-sort" className="products-sorter__label">
               Sort By:
@@ -47,7 +59,15 @@ function ProductGalleryLayout() {
             </label>
           </div>
           <section className="products-display">
-            <Outlet context={{ setBannerContent, productSort }} />
+            <Outlet
+              context={{
+                setBannerContent,
+                productSort,
+                productsRef,
+                setSearch,
+                currentPage,
+              }}
+            />
           </section>
         </main>
         <ScrollToTop />
