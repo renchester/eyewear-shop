@@ -22,6 +22,7 @@
     "react-flickity-component": "^4.0.5",
     "react-intersection-observer": "^9.4.3",
     "react-paginate": "^8.1.4",
+    "react-progressive-graceful-image": "^0.7.0",
     "react-router-dom": "^6.9.0"
   },
   "devDependencies": {
