@@ -3,7 +3,7 @@
 
   & img {
     object-fit: cover;
-    transition: transform 300ms linear;
+    transition: 300ms linear;
 
     &:hover {
       transform: scale(1.025);

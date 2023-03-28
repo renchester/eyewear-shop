@@ -40,11 +40,18 @@
   }
 
   &__img {
-    object-position: 0 -140px;
+    object-position: 0 -120px;
     object-fit: cover;
-    aspect-ratio: 5 / 2;
+    aspect-ratio: 4.5 / 2;
+    width: min(650px, 100%);
     max-width: 650px;
     filter: grayscale(100%) contrast(105%) brightness(102%);
+    transition: opacity 300ms;
+
+    &.img--loading {
+      filter: grayscale(100%) contrast(105%) brightness(102%) blur(20px);
+      scale: 1.05;
+    }
   }
 
   &__btn-container {
@@ -57,7 +64,7 @@
   &__btn {
     border-radius: 5px;
     padding: 17.5px 30px;
-    background: var(--color-primary);
+    background: var(--color-accent-2);
     color: white;
     text-decoration: none;
     font-family: var(--font-gotham);

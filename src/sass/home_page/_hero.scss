@@ -21,6 +21,12 @@
     height: 650px;
     object-fit: cover;
     filter: brightness(80%) grayscale(30%);
+    transition: opacity 500ms ease-out;
+
+    &.img--loading {
+      filter: brightness(80%) grayscale(30%) blur(12px);
+      scale: 1.05;
+    }
 
     &.img-2 {
       // polka-dot shirt guy

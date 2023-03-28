@@ -61,10 +61,22 @@
 
   &__img.main {
     filter: brightness(105%) contrast(105%);
+    transition: all 300ms;
+
+    &.img--loading {
+      filter: brightness(105%) contrast(105%) blur(20px);
+      scale: 1.05;
+    }
   }
 
   &__img.model {
     filter: saturate(80%) brightness(110%) contrast(110%);
+    transition: all 300ms;
+
+    &.img--loading {
+      filter: saturate(80%) brightness(110%) contrast(110%) blur(20px);
+      scale: 1.05;
+    }
   }
 
   &__text-wrapper {

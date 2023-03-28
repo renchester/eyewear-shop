@@ -146,9 +146,15 @@
     &__img {
       width: 550px;
       filter: grayscale(50%);
+      transition: opacity 300ms;
 
       &:hover {
         filter: grayscale(0%);
+      }
+
+      &.img--loading {
+        filter: grayscale(50%) blur(20px);
+        scale: 1.05;
       }
 
       @include breakpoint(lg) {
