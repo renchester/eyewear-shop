@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ProgressiveImage from 'react-progressive-graceful-image';
 
 import ImageWrapper from '../components/ImageWrapper';
 import BlogContent from '../components/BlogContent';
@@ -11,7 +12,12 @@ import mainImg1 from '../assets/img/unsplash/frame-13.jpg';
 import mainImg2 from '../assets/img/unsplash/frame-10.jpg';
 import mainImg3 from '../assets/img/unsplash/sun-11.jpg';
 
+import mainImgComp1 from '../assets/img/unsplash-compressed/frame-13.jpg';
+import mainImgComp2 from '../assets/img/unsplash-compressed/frame-10.jpg';
+import mainImgComp3 from '../assets/img/unsplash-compressed/sun-11.jpg';
+
 import eyecareImg from '../assets/img/unsplash/store-7.jpg';
+import eyecareImgComp from '../assets/img/unsplash-compressed/store-7.jpg';
 
 function AboutPage() {
   useEffect(() => {
@@ -37,11 +43,16 @@ function AboutPage() {
 
       <section className="story-main">
         <ImageWrapper className="story-main__panel panel-1">
-          <img
-            src={mainImg1}
-            alt="Guy in office wearing glasses"
-            className="story-main__img"
-          />
+          <ProgressiveImage src={mainImg1} placeholder={mainImgComp1}>
+            {(src, loading) => (
+              <img
+                src={src}
+                alt="Guy in office wearing glasses and a denim jacket"
+                className={`story-main__img ${loading && 'img--loading'}`}
+                loading="lazy"
+              />
+            )}
+          </ProgressiveImage>
         </ImageWrapper>
         <div className="story-main__panel panel-2 about-us">
           <h2 className="story-main__title">About us</h2>
@@ -88,18 +99,28 @@ function AboutPage() {
           </Link>
         </div>
         <ImageWrapper className="story-main__panel panel-4">
-          <img
-            src={mainImg2}
-            alt="Female model wearing eyeglasses"
-            className="story-main__img"
-          />
+          <ProgressiveImage src={mainImg2} placeholder={mainImgComp2}>
+            {(src, loading) => (
+              <img
+                src={src}
+                alt="Woman wearing round eyeglasses and a beige cape"
+                className={`story-main__img ${loading && 'img--loading'}`}
+                loading="lazy"
+              />
+            )}
+          </ProgressiveImage>
         </ImageWrapper>
         <ImageWrapper className="story-main__panel panel-5">
-          <img
-            src={mainImg3}
-            alt="Male model wearing sunglasses"
-            className="story-main__img"
-          />
+          <ProgressiveImage src={mainImg3} placeholder={mainImgComp3}>
+            {(src, loading) => (
+              <img
+                src={src}
+                alt="Guy wearing vintage round sunglasses and a printed shirt"
+                className={`story-main__img ${loading && 'img--loading'}`}
+                loading="lazy"
+              />
+            )}
+          </ProgressiveImage>
         </ImageWrapper>
         <div className="story-main__panel panel-6 sunglasses">
           <h2 className="story-main__title">Responsible Shade</h2>
@@ -147,11 +168,16 @@ function AboutPage() {
           </Link>
         </div>
         <ImageWrapper className="story-eyecare__img-wrapper">
-          <img
-            src={eyecareImg}
-            alt="Woman getting her eyes checked with a machine"
-            className="story-eyecare__img"
-          />
+          <ProgressiveImage src={eyecareImg} placeholder={eyecareImgComp}>
+            {(src, loading) => (
+              <img
+                src={src}
+                alt="Guy wearing vintage round sunglasses and a printed shirt"
+                className={`story-eyecare__img ${loading && 'img--loading'}`}
+                loading="lazy"
+              />
+            )}
+          </ProgressiveImage>
         </ImageWrapper>
       </section>
 

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 import Flickity from 'react-flickity-component';
+import ProgressiveImage from 'react-progressive-graceful-image';
 
 import ImageWrapper from './ImageWrapper';
 
@@ -45,12 +46,20 @@ function FeaturedProducts() {
               className="fp-product__img-wrapper
             "
             >
-              <img
+              <ProgressiveImage
                 src={item.images.main}
-                alt={item.description}
-                className="fp-product__img
-                  "
-              />
+                placeholder={item.compressedImages.main}
+              >
+                {(src, loading) => (
+                  <img
+                    src={src}
+                    alt={`${item.title} front profile`}
+                    className={`fp-product__img
+                     ${loading && 'img--loading'}`}
+                    loading="lazy"
+                  />
+                )}
+              </ProgressiveImage>
             </ImageWrapper>
             <span className="fp-product__title">{item.title}</span>
             <span className="fp-product__price">{item.price}</span>

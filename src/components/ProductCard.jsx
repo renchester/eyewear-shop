@@ -3,6 +3,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
+import ProgressiveImage from 'react-progressive-graceful-image';
 
 function ProductCard(props) {
   const { content } = props;
@@ -30,11 +31,23 @@ function ProductCard(props) {
           <div className="pd-card__sold-out">SOLD OUT</div>
         )}
         {content.onSale && <div className="pd-card__sale">SALE</div>}
-        <img
+        <ProgressiveImage
           src={isHover ? content.images.side : content.images.main}
-          alt={`${content.title} ${isHover ? 'side' : 'front'} profile`}
-          className="pd-card__img"
-        />
+          placeholder={
+            isHover
+              ? content.compressedImages.side
+              : content.compressedImages.main
+          }
+        >
+          {(src, loading) => (
+            <img
+              src={src}
+              alt={`${content.title} ${isHover ? 'side' : 'front'} profile`}
+              className={`pd-card__img ${loading && 'img--loading'}`}
+              loading="lazy"
+            />
+          )}
+        </ProgressiveImage>
       </div>
       <div className="pd-card__details">
         <h5 className="pd-card__title">{content.title}</h5>
@@ -62,6 +75,10 @@ ProductCard.propTypes = {
     onSale: PropTypes.bool.isRequired,
     id: PropTypes.string.isRequired,
     images: PropTypes.shape({
+      main: PropTypes.node,
+      side: PropTypes.node,
+    }),
+    compressedImages: PropTypes.shape({
       main: PropTypes.node,
       side: PropTypes.node,
     }),

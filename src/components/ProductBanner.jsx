@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import ProgressiveImage from 'react-progressive-graceful-image';
 import ImageWrapper from './ImageWrapper';
 
 function ProductBanner(props) {
@@ -12,12 +12,16 @@ function ProductBanner(props) {
         <p className="banner-main__description">{content.description}</p>
       </div>
       <ImageWrapper className="banner-img--wrapper">
-        <img
-          src={content.img}
-          alt={content.description}
-          className="banner-img"
-          loading="lazy"
-        />
+        <ProgressiveImage src={content.img} placeholder={content.imgCompressed}>
+          {(src, loading) => (
+            <img
+              src={src}
+              alt={content.imgAlt}
+              className={`banner-img ${loading && 'img--loading'}`}
+              loading="lazy"
+            />
+          )}
+        </ProgressiveImage>
       </ImageWrapper>
     </section>
   );
@@ -28,6 +32,8 @@ ProductBanner.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
     img: PropTypes.node.isRequired,
+    imgCompressed: PropTypes.node.isRequired,
+    imgAlt: PropTypes.string,
   }),
 };
 
@@ -37,6 +43,7 @@ ProductBanner.defaultProps = {
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque odit necessitatibus veritatis deserunt et eum eius pariatur earum quaerat quod.',
     img: '',
+    imgAlt: 'Placeholder banner image for collection',
   },
 };
 

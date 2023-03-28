@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import ProgressiveImage from 'react-progressive-graceful-image';
 
 import CartContext from '../context/CartContext';
 
@@ -58,8 +59,8 @@ function ProductPage() {
   }, [cartItems, productId]);
 
   useEffect(() => {
-    setTimeout(() => setErrorMessage(''), 10000);
-  });
+    setTimeout(() => setErrorMessage(''), 7500);
+  }, [errorMessage]);
 
   const handleDesiredQty = (e) => {
     setDesiredQty(() => e.target.value);

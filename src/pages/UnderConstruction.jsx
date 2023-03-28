@@ -1,8 +1,11 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ProgressiveImage from 'react-progressive-graceful-image';
 
+import ScrollToTop from '../components/ScrollToTop';
 import ImageWrapper from '../components/ImageWrapper';
 import dogPicture from '../assets/img/unsplash/frame-11.jpg';
+import dogPictureCompressed from '../assets/img/unsplash-compressed/frame-11.jpg';
 
 function UnderConstruction() {
   useEffect(() => {
@@ -15,11 +18,15 @@ function UnderConstruction() {
       <h1 className="tbd__title">OOPS!</h1>
       <div className="tbd__img--wrapper">
         <ImageWrapper>
-          <img
-            src={dogPicture}
-            alt="A golden retriever wearing glasses"
-            className="tbd__img"
-          />
+          <ProgressiveImage src={dogPicture} placeholder={dogPictureCompressed}>
+            {(src, loading) => (
+              <img
+                src={src}
+                alt="A golden retriever wearing glasses"
+                className={`tbd__img ${loading && 'img--loading'}`}
+              />
+            )}
+          </ProgressiveImage>
         </ImageWrapper>
       </div>
       <h3 className="tbd__subtitle">This is awkward...</h3>
@@ -58,6 +65,7 @@ function UnderConstruction() {
           SHOP SUNNIES
         </Link>
       </div>
+      <ScrollToTop />
     </div>
   );
 }

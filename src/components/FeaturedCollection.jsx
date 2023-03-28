@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
+import ProgressiveImage from 'react-progressive-graceful-image';
 
 import ImageWrapper from './ImageWrapper';
 
 import img1 from '../assets/img/unsplash/ad-3.jpg';
+import imgCompressed1 from '../assets/img/unsplash-compressed/ad-3.jpg';
 import img2 from '../assets/img/unsplash/frame-12.jpg';
+import imgCompressed2 from '../assets/img/unsplash-compressed/frame-12.jpg';
 
 function FeaturedCollection() {
   return (
@@ -22,20 +25,34 @@ function FeaturedCollection() {
           </Link>
         </div>
         <ImageWrapper className="featured-coll__img-wrapper">
-          <img
-            src={img2}
-            alt="Sample of a model"
-            className="featured-coll__img model"
-          />
+          <ProgressiveImage src={img2} placeholder={imgCompressed2}>
+            {(src, loading) => (
+              <img
+                src={src}
+                alt="Sample of a model"
+                className={`featured-coll__img model ${
+                  loading && 'img--loading'
+                }`}
+                loading="lazy"
+              />
+            )}
+          </ProgressiveImage>
         </ImageWrapper>
       </div>
       <div className="featured-coll__col-2">
         <ImageWrapper className="featured-coll__img-wrapper">
-          <img
-            src={img1}
-            alt="Sample of an ad in the featured collection"
-            className="featured-coll__img main"
-          />
+          <ProgressiveImage src={img1} placeholder={imgCompressed1}>
+            {(src, loading) => (
+              <img
+                src={src}
+                alt="Sunglass product in the featured collection"
+                className={`featured-coll__img main ${
+                  loading && 'img--loading'
+                }`}
+                loading="lazy"
+              />
+            )}
+          </ProgressiveImage>
         </ImageWrapper>
         <Link to="/products" className="featured-coll__btn-link">
           SEE THE COLLECTION
