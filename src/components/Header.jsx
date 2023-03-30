@@ -45,6 +45,7 @@ function Header() {
             type="button"
             className="header__btn-icon icon__search material-symbols-outlined"
             onClick={toggleSearchView}
+            data-testid="search-button"
           >
             <svg
               viewBox="-2 -2 34 34"
@@ -63,7 +64,9 @@ function Header() {
           >
             shopping_bag
             {cartItems.length > 0 && (
-              <div className="cart-badge">{cartItems.length}</div>
+              <div className="cart-badge" data-testid="cart-badge">
+                {cartItems.length}
+              </div>
             )}
           </Link>
         </div>

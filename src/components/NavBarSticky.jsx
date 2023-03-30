@@ -49,6 +49,7 @@ function NavBarSticky(props) {
         type="button"
         className="material-symbols-outlined nav__btn-menu"
         onClick={toggleMenuVisibility}
+        data-testid="menu-btn"
       >
         menu
       </button>
@@ -118,6 +119,7 @@ function NavBarSticky(props) {
             animate={{ scaleY: 1, originY: 0 }}
             exit={{ scaleY: 0 }}
             transition={{ type: 'tween' }}
+            data-testid="menu-dropdown"
           >
             <ul className="nav-menu__links">
               <NavLink
@@ -155,6 +157,7 @@ function NavBarSticky(props) {
               type="button"
               className="material-symbols-outlined nav-menu__btn-collapse"
               onClick={hideMenu}
+              data-testid="hide-menu-btn"
             >
               arrow_back_ios_new
             </button>
