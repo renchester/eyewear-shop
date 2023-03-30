@@ -21,4 +21,9 @@ export default defineConfig({
   optimizeDeps: {
     include: [],
   },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.js',
+  },
 });
