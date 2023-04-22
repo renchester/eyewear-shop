@@ -66,7 +66,10 @@ function ProductGallery({ categoryType }) {
       {currentItems.length > 0 ? (
         <>
           {currentItems.map((item) => (
-            <ProductCard key={`${item.id}--product-gallery`} content={item} />
+            <ProductCard
+              key={`${item.id}--product-gallery-${categoryType}`}
+              content={item}
+            />
           ))}
         </>
       ) : (
