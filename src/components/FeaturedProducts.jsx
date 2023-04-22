@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { nanoid } from 'nanoid';
 import Flickity from 'react-flickity-component';
 import ProgressiveImage from 'react-progressive-graceful-image';
 
@@ -39,7 +38,7 @@ function FeaturedProducts() {
         {featured.map((item) => (
           <Link
             to={`/products/${getCategory(item.type)}/${item.id}`}
-            key={nanoid()}
+            key={`${item.id}--featured-${item.type}`}
             className="fp-product"
           >
             <ImageWrapper

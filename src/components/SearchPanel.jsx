@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { DebounceInput } from 'react-debounce-input';
-import { nanoid } from 'nanoid';
 import { motion } from 'framer-motion';
 
 import { allProductsData } from '../data/productData';
@@ -66,7 +65,7 @@ function SearchPanel(props) {
                 res.type === 'sunnies' ? 'sunglasses' : 'eyeglasses'
               }/${res.id}`}
               className="search-result"
-              key={nanoid()}
+              key={`${res.id}--search-result`}
               onClick={toggleSearchView}
             >
               <img

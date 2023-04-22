@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { nanoid } from 'nanoid';
 
 import ProgressiveImage from 'react-progressive-graceful-image';
 
@@ -12,7 +11,7 @@ function BlogContent(props) {
       <h3 className="blog__section-title">{headerTitle}</h3>
       <div className="blog-posts latest">
         {content.map((item) => (
-          <article className="blog-item" key={nanoid()}>
+          <article key={`${item.id}--blog-item`} className="blog-item">
             <ProgressiveImage src={item.img} placeholder={item.imgCompressed}>
               {(src, loading) => (
                 <img

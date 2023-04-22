@@ -1,5 +1,3 @@
-import { nanoid } from 'nanoid';
-
 import img1 from '../assets/img/unsplash/frame-16.jpg';
 import img2 from '../assets/img/unsplash/store-5.jpg';
 import img3 from '../assets/img/unsplash/frame-2.jpg';
@@ -10,7 +8,7 @@ import imgComp3 from '../assets/img/unsplash-compressed/frame-2.jpg';
 
 const blogData = [
   {
-    id: nanoid(),
+    id: 'blog-post-dogs-glasses',
     category: 'feel good',
     title: 'Gallery of dogs wearing glasses',
     description:
@@ -20,7 +18,7 @@ const blogData = [
     imgAlt: 'Black pug in a grey sweater wearing round glasses',
   },
   {
-    id: nanoid(),
+    id: 'blog-post-take-care-of-eyes-teenager',
     category: 'proper eyecare',
     title: 'How to take care of your eyes as a teenager',
     description:
@@ -31,7 +29,7 @@ const blogData = [
       'Glasses in front of a blurred eye test, with the part inside the lens clear and non-blurry',
   },
   {
-    id: nanoid(),
+    id: 'blog-post-eye-doctor-asia',
     category: 'legacy',
     title: 'The eye doctor who traveled across Asia',
     description:

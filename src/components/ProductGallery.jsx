@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import { nanoid } from 'nanoid';
 
 import ReactPaginate from 'react-paginate';
 import PropTypes from 'prop-types';
@@ -67,7 +66,7 @@ function ProductGallery({ categoryType }) {
       {currentItems.length > 0 ? (
         <>
           {currentItems.map((item) => (
-            <ProductCard content={item} key={nanoid()} />
+            <ProductCard key={`${item.id}--product-gallery`} content={item} />
           ))}
         </>
       ) : (

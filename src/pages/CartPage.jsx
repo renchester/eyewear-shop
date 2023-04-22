@@ -1,8 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { nanoid } from 'nanoid';
-
 import CartContext from '../context/CartContext';
 import CartRow from '../components/CartRow';
 import ScrollToTop from '../components/ScrollToTop';
@@ -65,11 +63,16 @@ function CartPage() {
                 </tr>
               </thead>
               <tbody>
-                {cart.map((item) => {
+                {cart.map((item, index) => {
                   const productInCart = allProductsData.find(
                     (product) => product.id === item.itemId,
                   );
-                  return <CartRow product={productInCart} key={nanoid()} />;
+                  return (
+                    <CartRow
+                      key={`${item.itemId}--product-in-cart`}
+                      product={productInCart}
+                    />
+                  );
                 })}
               </tbody>
             </table>

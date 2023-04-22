@@ -4,7 +4,6 @@ import Flickity from 'react-flickity-component';
 // eslint-disable-next-line no-unused-vars
 import flickityFade from 'flickity-fade';
 import ProgressiveImage from 'react-progressive-graceful-image';
-import { nanoid } from 'nanoid';
 
 import heroData from '../data/heroData';
 
@@ -20,7 +19,7 @@ function Hero() {
   return (
     <Flickity options={flickityOptions} className="hero" elementType="section">
       {heroData.map((item, index) => (
-        <div className="hero-item" key={nanoid()}>
+        <div className="hero-item" key={`${item.id}--hero-item`}>
           <ProgressiveImage
             delay={10000}
             src={item.img}

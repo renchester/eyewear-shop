@@ -1,5 +1,3 @@
-import { nanoid } from 'nanoid';
-
 import hero1 from '../assets/img/unsplash/hero-1.jpg';
 import hero2 from '../assets/img/unsplash/hero-2.jpg';
 import hero3 from '../assets/img/unsplash/hero-3.jpg';
@@ -18,7 +16,7 @@ import heroCompressed7 from '../assets/img/unsplash-compressed/hero-7.jpg';
 
 const heroData = [
   {
-    id: nanoid(),
+    id: 'solari-hero-img',
     img: hero4,
     imgCompressed: heroCompressed4,
     title: 'Solari',
@@ -27,7 +25,7 @@ const heroData = [
       'Based in the heart of Los Angeles, this eyewear brand is on a mission to create durable and stylish sunglasses that are environmentally friendly. Each pair is handmade from plant-based cellulose acetate, ensuring a sleek and sustainable accessory for any outfit.',
   },
   {
-    id: nanoid(),
+    id: 'amora-hero-img',
     img: hero7,
     imgCompressed: heroCompressed7,
     title: 'Amora',
@@ -37,7 +35,7 @@ const heroData = [
       'Hailing from New York City, this modern eyewear brand is dedicated to crafting handmade unisex sunglasses from eco-friendly plant-based cellulose acetate. With a focus on durability and sustainability, their eyewear is designed to last and make a statement.',
   },
   {
-    id: nanoid(),
+    id: 'valti-hero-img',
     img: hero3,
     imgCompressed: heroCompressed3,
     title: 'Valti',
@@ -48,7 +46,7 @@ const heroData = [
   },
 
   {
-    id: nanoid(),
+    id: 'avara-hero-img',
     img: hero5,
     imgCompressed: heroCompressed5,
     title: 'Avara',
@@ -57,7 +55,7 @@ const heroData = [
       'This modern eyewear concept hails from London and produces handmade unisex sunglasses crafted from eco-friendly plant-based cellulose acetate. Their focus on durability and sustainability ensures that each pair of sunglasses is designed to last.',
   },
   {
-    id: nanoid(),
+    id: 'caldo-hero-img',
     img: hero6,
     imgCompressed: heroCompressed6,
     title: 'Caldo',
@@ -67,7 +65,7 @@ const heroData = [
       'This modern eyewear brand is based in Melbourne and produces handmade unisex sunglasses that are designed to last. Crafted from eco-friendly plant-based cellulose acetate, their eyewear is both stylish and sustainable.',
   },
   {
-    id: nanoid(),
+    id: 'helix-hero-img',
     img: hero2,
     imgCompressed: heroCompressed2,
     title: 'Helix',
@@ -77,7 +75,7 @@ const heroData = [
       'From Barcelona comes a modern eyewear concept that focuses on crafting handmade unisex sunglasses. Their eyewear is designed to last and crafted from eco-friendly plant-based cellulose acetate, making a statement while being responsible.',
   },
   {
-    id: nanoid(),
+    id: 'galla-hero-img',
     img: hero1,
     imgCompressed: heroCompressed1,
     title: 'Galla',

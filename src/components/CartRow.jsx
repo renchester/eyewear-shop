@@ -2,8 +2,6 @@ import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { nanoid } from 'nanoid';
-
 import formatPrice from '../utils/formatPrice';
 import parsePrice from '../utils/parsePrice';
 import CartContext from '../context/CartContext';
@@ -65,7 +63,7 @@ function CartRow(props) {
   };
 
   return (
-    <tr key={nanoid()} className="cart-item__row">
+    <tr key={`${product.id}--cart-row`} className="cart-item__row">
       <td className="cart-item__cell item-main">
         <div className="cart-item__main">
           <Link

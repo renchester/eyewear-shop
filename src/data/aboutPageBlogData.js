@@ -1,5 +1,3 @@
-import { nanoid } from 'nanoid';
-
 import img1 from '../assets/img/unsplash/store-1.jpg';
 import img2 from '../assets/img/unsplash/frame-4.jpg';
 import img3 from '../assets/img/unsplash/sun-5.jpg';
@@ -10,7 +8,7 @@ import imgComp3 from '../assets/img/unsplash-compressed/sun-5.jpg';
 
 const blogData = [
   {
-    id: nanoid(),
+    id: 'blog-post-new-loc-singapore',
     category: 'locations',
     title: "We're coming to Singapore",
     description:
@@ -20,7 +18,7 @@ const blogData = [
     imgAlt: 'Depiction of the store display of frames',
   },
   {
-    id: nanoid(),
+    id: 'blog-post-meet-our-savant-family',
     category: 'community',
     title: 'Meet our Savant Family',
     description:
@@ -31,7 +29,7 @@ const blogData = [
       'Black man holding his child in his arms and kissing him on his cheeks',
   },
   {
-    id: nanoid(),
+    id: 'blog-post-savant-moments-eye-spy',
     category: '#SAVANTmoments',
     title: 'Eye Spy',
     description:
