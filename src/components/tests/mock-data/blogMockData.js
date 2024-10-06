@@ -1,7 +1,5 @@
 import { nanoid } from 'nanoid';
-
-import img1 from '../../../assets/img/unsplash/frame-16.webp';
-import imgComp1 from '../../../assets/img/unsplash-compressed/frame-16.webp';
+import { BLOB_URL } from '../../../config';
 
 const blogData = [
   {
@@ -10,8 +8,8 @@ const blogData = [
     title: 'Example Title',
     description:
       'Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem facere sunt mollitia? Repellendus voluptatum, dolorem aliquam eveniet voluptas pariatur id. Velit laboriosam ad saepe amet in obcaecati doloribus sit dolores?',
-    img: img1,
-    imgCompressed: imgComp1,
+    img: `${BLOB_URL}/unsplash/frame-16.webp`,
+    imgCompressed: `${BLOB_URL}/unsplash-compressed/frame-16.webp`,
     imgAlt: 'Example Alt',
   },
 ];

@@ -7,17 +7,7 @@ import BlogContent from '../components/BlogContent';
 import ScrollToTop from '../components/ScrollToTop';
 
 import blogData from '../data/aboutPageBlogData';
-
-import mainImg1 from '../assets/img/unsplash/frame-13.webp';
-import mainImg2 from '../assets/img/unsplash/frame-10.webp';
-import mainImg3 from '../assets/img/unsplash/sun-11.webp';
-
-import mainImgComp1 from '../assets/img/unsplash-compressed/frame-13.webp';
-import mainImgComp2 from '../assets/img/unsplash-compressed/frame-10.webp';
-import mainImgComp3 from '../assets/img/unsplash-compressed/sun-11.webp';
-
-import eyecareImg from '../assets/img/unsplash/store-7.webp';
-import eyecareImgComp from '../assets/img/unsplash-compressed/store-7.webp';
+import { BLOB_URL } from '../config';
 
 function AboutPage() {
   useEffect(() => {
@@ -43,7 +33,10 @@ function AboutPage() {
 
       <section className="story-main">
         <ImageWrapper className="story-main__panel panel-1">
-          <ProgressiveImage src={mainImg1} placeholder={mainImgComp1}>
+          <ProgressiveImage
+            src={`${BLOB_URL}/unsplash/frame-13.webp`}
+            placeholder={`${BLOB_URL}/unsplash-compressed/frame-13.webp`}
+          >
             {(src, loading) => (
               <img
                 src={src}
@@ -99,7 +92,10 @@ function AboutPage() {
           </Link>
         </div>
         <ImageWrapper className="story-main__panel panel-4">
-          <ProgressiveImage src={mainImg2} placeholder={mainImgComp2}>
+          <ProgressiveImage
+            src={`${BLOB_URL}/unsplash/frame-10.webp`}
+            placeholder={`${BLOB_URL}/unsplash-compressed/frame-10.webp`}
+          >
             {(src, loading) => (
               <img
                 src={src}
@@ -111,7 +107,10 @@ function AboutPage() {
           </ProgressiveImage>
         </ImageWrapper>
         <ImageWrapper className="story-main__panel panel-5">
-          <ProgressiveImage src={mainImg3} placeholder={mainImgComp3}>
+          <ProgressiveImage
+            src={`${BLOB_URL}/unsplash/sun-11.webp`}
+            placeholder={`${BLOB_URL}/unsplash-compressed/sun-11.webp`}
+          >
             {(src, loading) => (
               <img
                 src={src}
@@ -168,7 +167,10 @@ function AboutPage() {
           </Link>
         </div>
         <ImageWrapper className="story-eyecare__img-wrapper">
-          <ProgressiveImage src={eyecareImg} placeholder={eyecareImgComp}>
+          <ProgressiveImage
+            src={`${BLOB_URL}/unsplash/store-7.webp`}
+            placeholder={`${BLOB_URL}/unsplash/store-7.webp`}
+          >
             {(src, loading) => (
               <img
                 src={src}

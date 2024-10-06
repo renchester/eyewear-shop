@@ -1,3 +1,4 @@
+import { BLOB_URL } from '../config';
 import framesData from './json/framesProductData.json';
 import sunniesData from './json/sunniesProductData.json';
 
@@ -20,12 +21,7 @@ function getImgUrl(fileName, type, isMain, isCompressed = false) {
   const subfolder = getSubfolder(type, isCompressed);
   const number = isMain ? '1' : '2';
 
-  const imgURL = new URL(
-    `../assets/img/${subfolder}/${fileName}-${number}.${ext}`,
-    import.meta.url,
-  ).href;
-
-  return imgURL;
+  return `${BLOB_URL}/${subfolder}/${fileName}-${number}.${ext}`;
 }
 
 function mapImage(item) {

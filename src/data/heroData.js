@@ -1,24 +1,10 @@
-import hero1 from '../assets/img/unsplash/hero-1.webp';
-import hero2 from '../assets/img/unsplash/hero-2.webp';
-import hero3 from '../assets/img/unsplash/hero-3.webp';
-import hero4 from '../assets/img/unsplash/hero-4.webp';
-import hero5 from '../assets/img/unsplash/hero-5.webp';
-import hero6 from '../assets/img/unsplash/hero-6.webp';
-import hero7 from '../assets/img/unsplash/hero-7.webp';
-
-import heroCompressed1 from '../assets/img/unsplash-compressed/hero-1.webp';
-import heroCompressed2 from '../assets/img/unsplash-compressed/hero-2.webp';
-import heroCompressed3 from '../assets/img/unsplash-compressed/hero-3.webp';
-import heroCompressed4 from '../assets/img/unsplash-compressed/hero-4.webp';
-import heroCompressed5 from '../assets/img/unsplash-compressed/hero-5.webp';
-import heroCompressed6 from '../assets/img/unsplash-compressed/hero-6.webp';
-import heroCompressed7 from '../assets/img/unsplash-compressed/hero-7.webp';
+import { BLOB_URL } from '../config';
 
 const heroData = [
   {
     id: 'solari-hero-img',
-    img: hero4,
-    imgCompressed: heroCompressed4,
+    img: `${BLOB_URL}/unsplash/hero-4.webp`,
+    imgCompressed: `${BLOB_URL}/unsplash-compressed/hero-4.webp`,
     title: 'Solari',
     imgAlt: 'Older black man wearing rounded metal frames and formal attire',
     details:
@@ -26,8 +12,8 @@ const heroData = [
   },
   {
     id: 'amora-hero-img',
-    img: hero7,
-    imgCompressed: heroCompressed7,
+    img: `${BLOB_URL}/unsplash/hero-7.webp`,
+    imgCompressed: `${BLOB_URL}/unsplash-compressed/hero-7.webp`,
     title: 'Amora',
     imgAlt:
       'Man wearing classic black sunglasses and a white on black polka-dot shirt; also holding a saxophone',
@@ -36,8 +22,8 @@ const heroData = [
   },
   {
     id: 'valti-hero-img',
-    img: hero3,
-    imgCompressed: heroCompressed3,
+    img: `${BLOB_URL}/unsplash/hero-3.webp`,
+    imgCompressed: `${BLOB_URL}/unsplash-compressed/hero-3.webp`,
     title: 'Valti',
     imgAlt:
       'Two men climbing up a mountain wearing sporty frames and hiking attire',
@@ -47,8 +33,8 @@ const heroData = [
 
   {
     id: 'avara-hero-img',
-    img: hero5,
-    imgCompressed: heroCompressed5,
+    img: `${BLOB_URL}/unsplash/hero-5.webp`,
+    imgCompressed: `${BLOB_URL}/unsplash-compressed/hero-5.webp`,
     title: 'Avara',
     imgAlt: 'Black male model wearing rounded metal frames and formal attire',
     details:
@@ -56,8 +42,8 @@ const heroData = [
   },
   {
     id: 'caldo-hero-img',
-    img: hero6,
-    imgCompressed: heroCompressed6,
+    img: `${BLOB_URL}/unsplash/hero-6.webp`,
+    imgCompressed: `${BLOB_URL}/unsplash-compressed/hero-6.webp`,
     title: 'Caldo',
     imgAlt:
       'Young white woman wearing classic metal sunglasses in a sunflower field',
@@ -66,8 +52,8 @@ const heroData = [
   },
   {
     id: 'helix-hero-img',
-    img: hero2,
-    imgCompressed: heroCompressed2,
+    img: `${BLOB_URL}/unsplash/hero-2.webp`,
+    imgCompressed: `${BLOB_URL}/unsplash-compressed/hero-2.webp`,
     title: 'Helix',
     imgAlt:
       'Group of three women and a man holding a guitar, all wearing sunglasses, sitting by a recreation vehicle',
@@ -76,8 +62,8 @@ const heroData = [
   },
   {
     id: 'galla-hero-img',
-    img: hero1,
-    imgCompressed: heroCompressed1,
+    img: `${BLOB_URL}/unsplash/hero-1.webp`,
+    imgCompressed: `${BLOB_URL}/unsplash-compressed/hero-1.webp`,
     title: 'Galla',
     imgAlt: 'Group of three men and a woman all having fun by the beach',
     details:

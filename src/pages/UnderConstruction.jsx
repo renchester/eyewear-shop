@@ -1,11 +1,9 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ProgressiveImage from 'react-progressive-graceful-image';
-
 import ScrollToTop from '../components/ScrollToTop';
 import ImageWrapper from '../components/ImageWrapper';
-import dogPicture from '../assets/img/unsplash/frame-11.webp';
-import dogPictureCompressed from '../assets/img/unsplash-compressed/frame-11.webp';
+import { BLOB_URL } from '../config';
 
 function UnderConstruction() {
   useEffect(() => {
@@ -18,7 +16,10 @@ function UnderConstruction() {
       <h1 className="tbd__title">OOPS!</h1>
       <div className="tbd__img--wrapper">
         <ImageWrapper>
-          <ProgressiveImage src={dogPicture} placeholder={dogPictureCompressed}>
+          <ProgressiveImage
+            src={`${BLOB_URL}/unsplash/frame-11.webp`}
+            placeholder={`${BLOB_URL}/unsplash-compressed/frame-11.webp`}
+          >
             {(src, loading) => (
               <img
                 src={src}

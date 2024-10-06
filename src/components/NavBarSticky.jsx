@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import CartContext from '../context/CartContext';
-import logo from '../assets/img/logo-white.png';
+import { BLOB_URL } from '../config';
 
 function NavBarSticky(props) {
   const { toggleSearchView } = props;
@@ -55,7 +55,11 @@ function NavBarSticky(props) {
       </button>
 
       <Link to="/" className="nav__logo">
-        <img src={logo} alt="Savant logo" className="nav__logo-img" />
+        <img
+          src={`${BLOB_URL}/logo-white.png`}
+          alt="Savant logo"
+          className="nav__logo-img"
+        />
       </Link>
       <ul className="nav__links">
         <NavLink

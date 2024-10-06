@@ -7,9 +7,8 @@ import CartContext from '../context/CartContext';
 import SearchPanel from './SearchPanel';
 import NavBar from './NavBar';
 import NavBarSticky from './NavBarSticky';
-
 import ImageWrapper from './ImageWrapper';
-import logo from '../assets/img/logo-black.png';
+import { BLOB_URL } from '../config';
 
 function Header() {
   const [cartItems] = useContext(CartContext);
@@ -37,7 +36,11 @@ function Header() {
 
         <Link to="/" className="header__logo">
           <ImageWrapper className="header__logo-img-wrapper">
-            <img src={logo} alt="Savant logo" className="header__logo-img" />
+            <img
+              src={`${BLOB_URL}/logo-black.png`}
+              alt="Savant logo"
+              className="header__logo-img"
+            />
           </ImageWrapper>
         </Link>
         <div className="header__icons-wrapper">

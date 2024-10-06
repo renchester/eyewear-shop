@@ -20,11 +20,7 @@ function Hero() {
     <Flickity options={flickityOptions} className="hero" elementType="section">
       {heroData.map((item, index) => (
         <div className="hero-item" key={`${item.id}--hero-item`}>
-          <ProgressiveImage
-            delay={10000}
-            src={item.img}
-            placeholder={item.imgCompressed}
-          >
+          <ProgressiveImage src={item.img} placeholder={item.imgCompressed}>
             {(src, loading) => (
               <img
                 src={src}

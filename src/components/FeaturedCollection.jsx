@@ -1,12 +1,7 @@
 import { Link } from 'react-router-dom';
 import ProgressiveImage from 'react-progressive-graceful-image';
-
 import ImageWrapper from './ImageWrapper';
-
-import img1 from '../assets/img/unsplash/ad-3.webp';
-import imgCompressed1 from '../assets/img/unsplash-compressed/ad-3.webp';
-import img2 from '../assets/img/unsplash/frame-12.webp';
-import imgCompressed2 from '../assets/img/unsplash-compressed/frame-12.webp';
+import { BLOB_URL } from '../config';
 
 function FeaturedCollection() {
   return (
@@ -25,7 +20,10 @@ function FeaturedCollection() {
           </Link>
         </div>
         <ImageWrapper className="featured-coll__img-wrapper">
-          <ProgressiveImage src={img2} placeholder={imgCompressed2}>
+          <ProgressiveImage
+            src={`${BLOB_URL}/unsplash/frame-12.webp`}
+            placeholder={`${BLOB_URL}/unsplash-compressed/frame-12.webp`}
+          >
             {(src, loading) => (
               <img
                 src={src}
@@ -41,7 +39,10 @@ function FeaturedCollection() {
       </div>
       <div className="featured-coll__col-2">
         <ImageWrapper className="featured-coll__img-wrapper">
-          <ProgressiveImage src={img1} placeholder={imgCompressed1}>
+          <ProgressiveImage
+            src={`${BLOB_URL}/unsplash/ad-3.webp`}
+            placeholder={`${BLOB_URL}/unsplash-compressed/ad-3.webp`}
+          >
             {(src, loading) => (
               <img
                 src={src}

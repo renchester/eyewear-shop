@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
-
-import githubIcon from '../assets/img/github-icon.png';
-
 import telIcon from '../assets/icons/icon-phone.avif';
 import chatIcon from '../assets/icons/icon-chat.webp';
 import emailIcon from '../assets/icons/icon-email.webp';
+import { BLOB_URL } from '../config';
 
 function Footer() {
   return (
@@ -188,7 +186,7 @@ function Footer() {
           rel="noopener noreferrer"
         >
           <img
-            src={githubIcon}
+            src={`${BLOB_URL}/github-icon.png`}
             alt="Github icon"
             width="18"
             className="footer-gh__img"

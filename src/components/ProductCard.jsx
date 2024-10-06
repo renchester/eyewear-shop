@@ -43,7 +43,7 @@ function ProductCard(props) {
             <img
               src={src}
               alt={`${content.title} ${isHover ? 'side' : 'front'} profile`}
-              className={`pd-card__img ${loading && 'img--loading'}`}
+              className={`pd-card__img ${loading && 'img--loading-2'}`}
               loading="lazy"
             />
           )}
