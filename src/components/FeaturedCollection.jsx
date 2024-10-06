@@ -3,10 +3,10 @@ import ProgressiveImage from 'react-progressive-graceful-image';
 
 import ImageWrapper from './ImageWrapper';
 
-import img1 from '../assets/img/unsplash/ad-3.jpg';
-import imgCompressed1 from '../assets/img/unsplash-compressed/ad-3.jpg';
-import img2 from '../assets/img/unsplash/frame-12.jpg';
-import imgCompressed2 from '../assets/img/unsplash-compressed/frame-12.jpg';
+import img1 from '../assets/img/unsplash/ad-3.webp';
+import imgCompressed1 from '../assets/img/unsplash-compressed/ad-3.webp';
+import img2 from '../assets/img/unsplash/frame-12.webp';
+import imgCompressed2 from '../assets/img/unsplash-compressed/frame-12.webp';
 
 function FeaturedCollection() {
   return (

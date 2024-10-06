@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 
-import img1 from '../../../assets/img/unsplash/frame-16.jpg';
-import imgComp1 from '../../../assets/img/unsplash-compressed/frame-16.jpg';
+import img1 from '../../../assets/img/unsplash/frame-16.webp';
+import imgComp1 from '../../../assets/img/unsplash-compressed/frame-16.webp';
 
 const blogData = [
   {

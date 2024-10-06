@@ -1,10 +1,10 @@
-import imgAllProducts from '../assets/img/unsplash/frame-9.jpg';
-import imgSunglasses from '../assets/img/unsplash/sun-1.jpg';
-import imgEyeglasses from '../assets/img/unsplash/frame-7.jpg';
+import imgAllProducts from '../assets/img/unsplash/frame-9.webp';
+import imgSunglasses from '../assets/img/unsplash/sun-1.webp';
+import imgEyeglasses from '../assets/img/unsplash/frame-7.webp';
 
-import imgCompressedAllProducts from '../assets/img/unsplash-compressed/frame-9.jpg';
-import imgCompressedSunglasses from '../assets/img/unsplash-compressed/sun-1.jpg';
-import imgCompressedEyeglasses from '../assets/img/unsplash-compressed/frame-7.jpg';
+import imgCompressedAllProducts from '../assets/img/unsplash-compressed/frame-9.webp';
+import imgCompressedSunglasses from '../assets/img/unsplash-compressed/sun-1.webp';
+import imgCompressedEyeglasses from '../assets/img/unsplash-compressed/frame-7.webp';
 
 import { allProductsData, sunglassesData, eyeglassesData } from './productData';
 

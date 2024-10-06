@@ -8,16 +8,16 @@ import ScrollToTop from '../components/ScrollToTop';
 
 import blogData from '../data/aboutPageBlogData';
 
-import mainImg1 from '../assets/img/unsplash/frame-13.jpg';
-import mainImg2 from '../assets/img/unsplash/frame-10.jpg';
-import mainImg3 from '../assets/img/unsplash/sun-11.jpg';
+import mainImg1 from '../assets/img/unsplash/frame-13.webp';
+import mainImg2 from '../assets/img/unsplash/frame-10.webp';
+import mainImg3 from '../assets/img/unsplash/sun-11.webp';
 
-import mainImgComp1 from '../assets/img/unsplash-compressed/frame-13.jpg';
-import mainImgComp2 from '../assets/img/unsplash-compressed/frame-10.jpg';
-import mainImgComp3 from '../assets/img/unsplash-compressed/sun-11.jpg';
+import mainImgComp1 from '../assets/img/unsplash-compressed/frame-13.webp';
+import mainImgComp2 from '../assets/img/unsplash-compressed/frame-10.webp';
+import mainImgComp3 from '../assets/img/unsplash-compressed/sun-11.webp';
 
-import eyecareImg from '../assets/img/unsplash/store-7.jpg';
-import eyecareImgComp from '../assets/img/unsplash-compressed/store-7.jpg';
+import eyecareImg from '../assets/img/unsplash/store-7.webp';
+import eyecareImgComp from '../assets/img/unsplash-compressed/store-7.webp';
 
 function AboutPage() {
   useEffect(() => {

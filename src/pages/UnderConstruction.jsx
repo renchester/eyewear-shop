@@ -4,8 +4,8 @@ import ProgressiveImage from 'react-progressive-graceful-image';
 
 import ScrollToTop from '../components/ScrollToTop';
 import ImageWrapper from '../components/ImageWrapper';
-import dogPicture from '../assets/img/unsplash/frame-11.jpg';
-import dogPictureCompressed from '../assets/img/unsplash-compressed/frame-11.jpg';
+import dogPicture from '../assets/img/unsplash/frame-11.webp';
+import dogPictureCompressed from '../assets/img/unsplash-compressed/frame-11.webp';
 
 function UnderConstruction() {
   useEffect(() => {

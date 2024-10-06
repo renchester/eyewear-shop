@@ -1,18 +1,18 @@
-import hero1 from '../assets/img/unsplash/hero-1.jpg';
-import hero2 from '../assets/img/unsplash/hero-2.jpg';
-import hero3 from '../assets/img/unsplash/hero-3.jpg';
-import hero4 from '../assets/img/unsplash/hero-4.jpg';
-import hero5 from '../assets/img/unsplash/hero-5.jpg';
-import hero6 from '../assets/img/unsplash/hero-6.jpg';
-import hero7 from '../assets/img/unsplash/hero-7.jpg';
+import hero1 from '../assets/img/unsplash/hero-1.webp';
+import hero2 from '../assets/img/unsplash/hero-2.webp';
+import hero3 from '../assets/img/unsplash/hero-3.webp';
+import hero4 from '../assets/img/unsplash/hero-4.webp';
+import hero5 from '../assets/img/unsplash/hero-5.webp';
+import hero6 from '../assets/img/unsplash/hero-6.webp';
+import hero7 from '../assets/img/unsplash/hero-7.webp';
 
-import heroCompressed1 from '../assets/img/unsplash-compressed/hero-1.jpg';
-import heroCompressed2 from '../assets/img/unsplash-compressed/hero-2.jpg';
-import heroCompressed3 from '../assets/img/unsplash-compressed/hero-3.jpg';
-import heroCompressed4 from '../assets/img/unsplash-compressed/hero-4.jpg';
-import heroCompressed5 from '../assets/img/unsplash-compressed/hero-5.jpg';
-import heroCompressed6 from '../assets/img/unsplash-compressed/hero-6.jpg';
-import heroCompressed7 from '../assets/img/unsplash-compressed/hero-7.jpg';
+import heroCompressed1 from '../assets/img/unsplash-compressed/hero-1.webp';
+import heroCompressed2 from '../assets/img/unsplash-compressed/hero-2.webp';
+import heroCompressed3 from '../assets/img/unsplash-compressed/hero-3.webp';
+import heroCompressed4 from '../assets/img/unsplash-compressed/hero-4.webp';
+import heroCompressed5 from '../assets/img/unsplash-compressed/hero-5.webp';
+import heroCompressed6 from '../assets/img/unsplash-compressed/hero-6.webp';
+import heroCompressed7 from '../assets/img/unsplash-compressed/hero-7.webp';
 
 const heroData = [
   {

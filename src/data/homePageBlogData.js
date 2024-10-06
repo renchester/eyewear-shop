@@ -1,10 +1,10 @@
-import img1 from '../assets/img/unsplash/frame-16.jpg';
-import img2 from '../assets/img/unsplash/store-5.jpg';
-import img3 from '../assets/img/unsplash/frame-2.jpg';
+import img1 from '../assets/img/unsplash/frame-16.webp';
+import img2 from '../assets/img/unsplash/store-5.webp';
+import img3 from '../assets/img/unsplash/frame-2.webp';
 
-import imgComp1 from '../assets/img/unsplash-compressed/frame-16.jpg';
-import imgComp2 from '../assets/img/unsplash-compressed/store-5.jpg';
-import imgComp3 from '../assets/img/unsplash-compressed/frame-2.jpg';
+import imgComp1 from '../assets/img/unsplash-compressed/frame-16.webp';
+import imgComp2 from '../assets/img/unsplash-compressed/store-5.webp';
+import imgComp3 from '../assets/img/unsplash-compressed/frame-2.webp';
 
 const blogData = [
   {
