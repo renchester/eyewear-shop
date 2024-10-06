@@ -38,6 +38,10 @@ function ProductPage() {
   const [errorMessage, setErrorMessage] = useState('');
   const [itemIsInCart, setInCart] = useState(false);
 
+  const increment = () =>
+    setDesiredQty((prev) => Math.min(prev + 1, product.quantity));
+  const decrement = () => setDesiredQty((prev) => Math.max(1, prev - 1));
+
   const ERROR_MESSAGE =
     'We do not have enough stocks for your current order. Contact us directly to get more information';
 
@@ -216,16 +220,34 @@ function ProductPage() {
                   className=" pd-pg__opt-label pd-pg__quantity-label"
                 >
                   Quantity:
-                  <input
-                    type="number"
-                    className="pd-pg__quantity-input"
-                    name="pd-quantity"
-                    id="pd-quantity"
-                    max={product.quantity}
-                    min={1}
-                    onChange={handleDesiredQty}
-                    value={desiredQty}
-                  />
+                  <div className="pd-pg__quantity-wrapper">
+                    <button
+                      type="button"
+                      className="pd-pg__quantity-btn"
+                      disabled={desiredQty <= 1}
+                      onClick={decrement}
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      className="pd-pg__quantity-input"
+                      name="pd-quantity"
+                      id="pd-quantity"
+                      max={product.quantity}
+                      min={1}
+                      onChange={handleDesiredQty}
+                      value={desiredQty}
+                    />
+                    <button
+                      type="button"
+                      className="pd-pg__quantity-btn"
+                      disabled={desiredQty >= product.quantity}
+                      onClick={increment}
+                    >
+                      +
+                    </button>
+                  </div>
                 </label>
                 <button
                   className="pd-pg__btn-cart pd-pg__btn-add-cart"

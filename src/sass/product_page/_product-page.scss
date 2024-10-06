@@ -195,12 +195,19 @@
     width: fit-content;
   }
 
+  &__quantity-wrapper {
+    display: flex;
+    gap: 0.25rem;
+  }
+
   &__quantity-input {
     width: 60px;
     padding: 10px;
     border: 1px solid var(--color-grey-light-3);
     font-size: var(--text-sm);
     font-family: var(--font-gotham);
+
+    -moz-appearance: textfield;
 
     &:focus {
       outline: 1px solid black;
@@ -209,6 +216,18 @@
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
+    }
+  }
+
+  &__quantity-btn {
+    padding: 0.375rem;
+    background: var(--color-grey-light-3);
+    border-radius: 2px;
+    cursor: pointer;
+
+    &:disabled {
+      background: var(--color-grey-light-2);
+      cursor: not-allowed;
     }
   }
 
