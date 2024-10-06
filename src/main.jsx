@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 
 import CartProvider from './context/CartProvider';
 
@@ -65,5 +66,6 @@ function RouteSwitch() {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouteSwitch />
+    <Analytics />
   </React.StrictMode>,
 );
