@@ -23,3 +23,5 @@ vite
 *.njsproj
 *.sln
 *.sw?
+
+.env
